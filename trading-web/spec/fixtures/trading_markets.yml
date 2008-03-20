@@ -1,0 +1,94 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+market_A:
+  id: 1
+  company_id: 1 
+  market_name: Market A 
+  stock_symbol: HIMCO    
+  last_traded_price: 24343
+  last_traded_date: 2007-10-26
+  prev_close: 22434
+  price_high: 43434
+  price_low:  13434
+  price_avrg:  27899
+  currency: BGN
+  price_change: 23
+  nominal: 100
+  market_cap: 567890
+  created_at: 2006-10-26
+  updated_at: 2006-10-26
+  lock_version: 0
+
+market_B:
+  id: 2
+  company_id: 1 
+  market_name: Market B
+  stock_symbol: R1HIMCO    
+  last_traded_price: 534543
+  last_traded_date: 2007-10-23
+  prev_close: 534000
+  price_high: 65656
+  price_low:  23433
+  price_avrg: 43434
+  currency: BGN
+  price_change: 23
+  nominal: 100
+  market_cap: 567890
+  created_at: 2006-10-26
+  updated_at: 2006-10-26
+  lock_version: 0
+
+market_A_BUL:
+  id: 3
+  company_id: 2 
+  market_name: Market A 
+  stock_symbol: BULBA    
+  last_traded_price: 24343
+  last_traded_date: 2007-10-26
+  prev_close: 24500
+  price_high: 43434
+  price_low:  13434
+  price_avrg:  27899
+  currency: BGN
+  price_change: 23
+  nominal: 100
+  market_cap: 567890
+  created_at: 2006-10-26
+  updated_at: 2006-10-26
+  lock_version: 0
+
+market_B_BULBA:
+  id: 4
+  company_id: 2 
+  market_name: Market B
+  stock_symbol: R1BULBA   
+  last_traded_price: 53434
+  last_traded_date: 2007-10-23
+  prev_close: 55045
+  price_high: 65656
+  price_low:  23433
+  price_avrg: 43434
+  currency: BGN
+  price_change: 23
+  nominal: 100
+  market_cap: 567890
+  created_at: 2006-10-26
+  updated_at: 2006-10-26
+  lock_version: 0
+
+market_A_PHARMA:
+  id: 5
+  company_id: 3 
+  market_name: Market A 
+  stock_symbol: PHARMA    
+  last_traded_price: 24343
+  last_traded_date: 2007-10-26
+  price_high: 43434
+  price_low:  13434
+  price_avrg:  27899
+  currency: BGN
+  price_change: 23
+  nominal: 100
+  market_cap: 567890
+  created_at: 2006-10-26
+  updated_at: 2006-10-26
+  lock_version: 0

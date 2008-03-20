@@ -1,0 +1,39 @@
+<div id="head_title">
+  <div id="header_block">
+    <h1><%= @company.name%> &nbsp; ( <%= @company.stock_symbol %>)</h1>
+    Sector:&nbsp;&nbsp;<%= @company.type.name.capitalize%>
+    </div>
+</div>
+
+<ul id="companies_tabnav">
+    <li><%= link_to_remote "Overview", 
+    { :url => { :action => "overview", :id => @company.id },
+    :method =>  'get', :update => "tab_content",
+    :loading => "select_tab('overview_tab');showLeftLayout();",
+    :loaded =>  "activate_tab('overview_tab','tab_content');",
+    :complete => "initScrollWith('top_movers_box');showLeftLayout();"},
+    { :href => url_for(:action => 'overview', :id => @company.id) , :class => extract_tab_class("overview") , :id => "overview_tab"}%></li>
+    <li><%= link_to_remote "Financials-I", 
+    { :url => { :action => "financials", :id => @company.id },
+    :method =>  'get', :update => "tab_content",
+    :loading => "select_tab('finance_tab');removeLeftLayout();",
+    :loaded =>  "activate_tab('finance_tab','tab_content');initScroll();",
+    :complete => "initializeStatement(1);drawTableChart('statementTable1', 'statement-chart','statement-detailed-chart');"},
+    { :href => url_for(:action => 'financials', :id => @company.id) , :class => extract_tab_class("financials") , :id => "finance_tab"}%></li>
+     <li><%= link_to_remote "Financials-II", 
+    { :url => { :action => "financials_xls", :id => @company.id },
+    :method =>  'get', :update => "tab_content",
+    :loading => "select_tab('finance_tab2');removeLeftLayout();",
+    :loaded =>  "activate_tab('finance_tab2','tab_content');"},
+    { :href => url_for(:action => 'financials_xls', :id => @company.id) , :class => extract_tab_class("financials_xls") , :id => "finance_tab2"}%></li>
+    <li><%= link_to_remote "Background", 
+    { :url => { :action => "background", :id => @company.id },
+    :method =>  'get', :update => "tab_content",
+    :loading => "select_tab('background_tab');showLeftLayout();",
+    :loaded =>  "activate_tab('background_tab','tab_content');",
+    :complete => "initScrollWith('top_movers_box');showLeftLayout();"},
+    { :href => url_for(:action => 'background', :id => @company.id) , :class => extract_tab_class("background") , :id => "background_tab"}%></li>
+</ul>
+<div id="tab_content">
+    <%= render :partial => tab_content %>
+</div>

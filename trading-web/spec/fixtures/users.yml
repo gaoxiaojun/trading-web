@@ -1,0 +1,15 @@
+# password is "hrabrina"
+igor:
+  id: 126
+  login: 'igor'
+  cryptpassword: 'faf41460fa346c7880ff70962744a2acecbdf65e'
+  validkey: nil
+  email: 'igor@gmail.com'
+  newemail: 'igor@gmail.com'
+  ipaddr: '12.23.34.45'
+  created_at: '2006-02-01 01:02:03'
+  updated_at: '1800-01-01 00:00:01'
+  confirmed: 1
+  domains: 'USERS,1'
+  firstname: 'Igor'
+  lastname: 'Stoyanov'

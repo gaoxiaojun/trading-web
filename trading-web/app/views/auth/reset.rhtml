@@ -1,0 +1,39 @@
+<div id="signup" class="article">
+    <h2>Change Password</h2>
+    <h3>Well, things like these happen!</h3>
+    
+    <% if flash['notice'] %>
+      <div id="notice"><strong><%= flash['notice'] %></strong></div>
+    <% elsif flash['errors']%>
+      <div id="errorExplanation" class="errorExplanation"><strong><%= flash['errors'] %></strong></div>
+    <% end %>
+    <% @newuser and if error_messages_for('newuser') != "" %>
+      <%= error_messages_for 'newuser' %>
+    <% end %>
+    
+    <fieldset class='form'>
+        <legend><strong>Change Password Form</strong></legend>
+        <% form_for :post, :url => { :action => "reset" } do |f| %>
+          <%= f.hidden_field :validkey, :value => @validkey %>
+          <%= f.hidden_field :login, :value => @login %>
+        <div class="form-element" >
+              <p>
+                  <label for="post_login" class="required">*Enter new password:</label>
+                  <%= f.password_field :password, :maxlength => 20 %>
+              </p>
+          </div>
+          <div class="form-element" >
+              <p>
+                  <label for="post_login" class="required">*Confirm new password:</label>
+                  <%= f.password_field :passwordconf, :maxlength => 20 %>
+              </p>
+          </div>
+          <div>
+              <p>
+                  <label for="posts" class="submit_label" style="width: 160px;">&nbsp;</label>
+                  <%= spinner_tag %><%= submit_tag "Change my password &#187;", :class => 'submit', :id=>"big_button", :style=>"width: 210px;" %>
+              </p>
+          </div>
+        <% end %>
+    </fieldset>
+</div>

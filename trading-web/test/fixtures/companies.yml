@@ -1,0 +1,46 @@
+# == Schema Information
+# Schema version: 18
+#
+# Table name: companies
+#
+#  id           :integer(11)     not null, primary key
+#  type_id      :integer(11)     not null
+#  name         :string(160)     not null
+#  bul_stat     :integer(11)     not null
+#  stock_symbol :string(8)       
+#  created_at   :datetime        not null
+#  updated_at   :datetime        not null
+#  lock_version :integer(11)     default(0), not null
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+himco:
+  id: 1
+  name: Himco Chemical, Inc 
+  stock_symbol: HIMCO    
+  bul_stat: 121212             
+  type_id: 3
+  created_at: 2006-10-25
+  updated_at: 2006-10-25
+  lock_version: 0
+  
+bulbank:
+  id: 2
+  name: Bul Bank, Inc 
+  stock_symbol: BULBA       
+  bul_stat: 232323             
+  type_id: 1 
+  created_at: 2006-10-26
+  updated_at: 2006-10-26
+  lock_version: 0
+
+pharma:
+  id: 3
+  name: Pharma Drugs, LTD   
+  stock_symbol: PHARM         
+  bul_stat: 343434             
+  type_id: 2 
+  created_at: 2006-10-27
+  updated_at: 2006-10-27
+  lock_version: 0
+ 

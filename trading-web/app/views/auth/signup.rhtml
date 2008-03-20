@@ -1,0 +1,53 @@
+<div id="signup" class="article">
+    <h2>Signup</h2>
+    <h3>We are pleased to have you in our community!</h3>
+    <% if flash['notice'] %>
+      <div id="notice"><strong><%= flash['notice'] %></strong></div>
+    <% end %>
+    <% @newuser and if error_messages_for('newuser') != "" %>
+      <%= error_messages_for 'newuser' %>
+    <% end %>
+    <fieldset class='form'>
+        <legend><strong>Registration Form</strong></legend>
+        <% form_for :post, :url => { :action => "signup" } do |f| %>
+          <div class="form-element" >
+              <p>
+                  <label for="post_login" class="required">*Enter login:</label>
+                  <%= f.text_field :login, :maxlength => 20 %>
+              </p>
+          </div>
+          <div class="form-element" >
+              <p>
+                  <label for="post_password" class="required">*Enter password:</label>
+                  <%= f.password_field :password, :maxlength => 20 %>
+              </p>
+          </div>
+          <div class="form-element" >
+              <p>
+                  <label><strong>Note:</strong></label>
+                  <span style="color: #5F5F5F; font-size: 90%;">You will receive a confirmation message. </span>
+                  <label><strong>&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
+                  <span style="color: #5F5F5F; font-size: 90%;">Please fill up your real email address.</span>
+              </p>
+          </div>
+          <div class="form-element" >
+              <p>
+                  <label for="post_email" class="required">*Your current email address:</label>
+                  <%= f.text_field :email, :maxlength => 64 %>
+              </p>
+          </div>
+          <div>
+              <p>
+                  <label for="posts" class="submit_label" >&nbsp;</label>
+                  <%= spinner_tag %><%= submit_tag "Create my account &#187;", :class => 'submit', :id=>"big_button", :style=>"width: 210px;" %>
+              </p>
+          </div>
+        
+        <% end %>
+    </fieldset>
+    <br/>
+    | <%= link_to "Resend confirmation mail &#187;", :action => "resendsignup" %> | 
+    <% if flash['notice'] %>
+      <%= javascript_tag "Effect.Shake('signup')" %>
+    <% end %>
+</div>

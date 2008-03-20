@@ -1,0 +1,19 @@
+--- 
+port: "22222"
+timer_sleep: 7200
+load_rails: true
+environment: production
+host: localhost
+pool_size: 1
+worker_dir: lib/workers
+database_yml: config/database.yml
+acl: 
+  deny: all
+  allow: localhost 127.0.0.1
+  order: deny,allow
+
+autostart:
+  1:
+    job_key: scheduled_worker
+    class: scheduler_worker
+  

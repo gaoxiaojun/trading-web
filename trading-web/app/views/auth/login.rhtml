@@ -1,0 +1,46 @@
+<div class="article">
+    <h2>Login</h2>
+    <h3>Unfortunately, we need to go through this step.</h3>
+    <% if flash[:errors]%>
+      <div id="errorExplanation" class="errorExplanation"><strong><%= flash[:errors] %></strong></div>
+    <% end %>
+    <fieldset class='form' id="login_fieldset" >
+        <legend><strong>Login Form</strong></legend>
+        <% form_for(:members, :action => 'login', :html => { :method => 'post', :onSubmit => "Element.show('ident_spinner');" }) do |f| %>
+          <div class="form-element">
+              <p>
+                  <label for="members_login">Username</label>
+                  <%= f.text_field :login, :maxlength => 64, :class=>"selected", :style=>"width: 150px;", :value => @login %>
+              </p>
+          </div>
+        
+          <div class="form-element">
+              <p>
+                  <label for="members_password">Password</label>
+                  <%= f.password_field :password, :maxlength => 64, :class=>"selected", :style=>"width: 150px;"%>
+              </p>
+          </div>
+          <div class="form-element">
+              <p>
+                  <label for="members_keepalive">&nbsp;</label>
+                  <input type="checkbox" style="width: 12px; margin-bottom: 0px;" name="members[keepalive]" id="members_keepalive" value="1" <%= (!@keepalive.nil? and  @keepalive == '1') ? 'checked' : '' %>/><span>Keep me signed in</span>
+              </p>
+          </div>
+          <br/>
+          <div>
+              <p>
+                  <label id="member_submit_label" for="members">&nbsp;</label>
+                  <%= spinner_tag %><%= submit_tag "Sign In &#187;", :class => 'submit'%>
+              </p>
+          </div>
+        <% end %>
+    </fieldset>
+    <br/>
+    <%= link_to 'Forgot your password?', auth_url(:action => 'lostpassword') %> |&nbsp;  
+    <% if @app[:allow_self_registration] -%>
+      <%= link_to "Create an account?", auth_url(:action => 'signup') %> | 
+    <% end %>
+    <% if flash[:errors] %>
+      <script type="text/javascript">Effect.Shake('login_fieldset')</script>
+    <% end %>
+</div>

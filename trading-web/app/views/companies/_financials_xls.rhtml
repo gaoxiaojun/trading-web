@@ -1,0 +1,21 @@
+<div id="theme_footer" class="theme_orng" <%= 'style="margin-top: 0;"' if print_preview? %> >
+    <h2>Detailed&nbsp;&nbsp;Financials</h2>
+    <% if print_preview? %>
+       <div style="z-index: 5; float: left; position: relative; margin-top:-20px;">
+            <a style="text-decoration: none" href="/companies/<%= @company.id%>?tab=financials_xls"><< Back</a>
+        </div>
+      <% else %>
+      <div style="z-index: 5; float: right; position: relative; margin-top:-18px;background: url(/images/add.gif) no-repeat 100% 0; ">
+          <a style="text-decoration: none" href="/companies/financials_xls_print_preview/<%= @company.id%>">Expand View &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      </div>
+    <% end %>
+    <% if File.exists?(RAILS_ROOT + "/public/companies/xls/#{@company.default_stock_symbol.downcase}.htm") %>
+      <iframe width="100%" height="<%= print_preview? ? '570pt' : '500pt'%>" frameborder="0" scrolling="true" src="/companies/xls/<%= @company.default_stock_symbol.downcase %>.htm"></iframe>
+    <% elsif File.exists?(RAILS_ROOT + "/public/companies/xls/#{@company.default_stock_symbol.upcase}.htm") %>
+      <iframe width="100%" height="<%= print_preview? ? '570pt' : '500pt'%>" frameborder="0" scrolling="true" src="/companies/xls/<%= @company.default_stock_symbol.upcase %>.htm"></iframe>
+    <% else %>
+      <br/> <br/>
+      Sorry, no detailed financials for this company.
+      <br/> <br/> <br/> <br/>
+    <% end %>
+</div>

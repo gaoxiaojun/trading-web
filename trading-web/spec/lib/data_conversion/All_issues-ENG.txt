@@ -1,0 +1,6 @@
+ALL ISSUES LISTED AS OF 12.11.2007						
+BSE code	Issuer	ISIN	Nominal	Currency	Volume (Securities)	Market
+2000192	Ministry of Finance	BG2000192224	100.00	BGN	0	Official Market Government Securities
+ADVEQ	Advance Equity Holding AD-Sofia	BG1100033064	1.00	BGN	"11,984,284"	"Unofficial Market Equities ""A"""
+AFH	Favorit Hold AD-Sofia	BG1100035986	2.00	BGN	"2,356,923"	"Unofficial Market Equities ""A"""
+AGROF	Agro Finance REIT-Sofia	BG1100039061	1.00	EUR	"16,137,954"	"Unofficial Market Equities ""A"""

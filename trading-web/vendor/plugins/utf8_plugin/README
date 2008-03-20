@@ -1,0 +1,7 @@
+= UTF-8 Plugin
+
+This plugins defines a few helpful methods on ActionController to help with sending and receiving UTF-8 data. When the plugin is loaded it sets two new filters.
+
+== normalize_unicode_params
+
+This normalizes all incoming strings in params. Normalization is an operation on a string that transform all the characters to a composed or decomposed form. This is important when you, for instance, want to compare strings. Read our Unicode Primer for more information about normalization. By default this uses NFKC.

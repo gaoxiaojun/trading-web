@@ -1,0 +1,294 @@
+.ajax-scaffold form, .ajax-scaffold table, .ajax-scaffold p, .ajax-scaffold div, .ajax-scaffold fieldset {margin: 0; padding: 0}
+.ajax-scaffold {margin: 5px 0}
+.ajax-scaffold table {width: 100%}
+.ajax-scaffold a,.ajax-scaffold a:visited {color: blue; text-decoration: none; font-weight: bold}
+.ajax-scaffold a:visited {color: #06c}
+.ajax-scaffold a:hover {background-color: #ff8; text-decoration: underline}
+.ajax-scaffold-header {background-color: #5BB2D1; position: relative}
+.ajax-scaffold-header h2 {color: #fff; padding: 2px 5px 4px 5px; margin: 0; font-size: 1.5em}
+.ajax-scaffold-header div.actions a {color: #fff; background: url(../images/add.gif) 1px 50% no-repeat; letter-spacing: -1px; text-decoration: none; padding: 1px 2px 1px 19px}
+.ajax-scaffold-header div.actions a:hover {background: #378CDF url(../images/add.gif) 1px 50% no-repeat}
+.ajax-scaffold-header div.actions {position: absolute; right: 5px; top: 3px; width: 120px; text-align: right}
+.ajax-scaffold-header div.actions img {margin-bottom: -3px}
+.ajax-scaffold .ajax-scaffold {margin: 2px 5px}
+.ajax-scaffold .ajax-scaffold .ajax-scaffold-header h2 {font-size: 13px; font-weight: bold}
+.ajax-scaffold .ajax-scaffold .ajax-scaffold-header div.actions a {font: bold 11px verdana, sans-serif; padding: 0 2px 1px 17px}
+.ajax-scaffold .ajax-scaffold .ajax-scaffold-header div.actions {top: 4px}
+.ajax-scaffold th {background-color: #00769A; text-align: left}
+.ajax-scaffold th a, .ajax-scaffold th p {font-size: 85%; display: block; background-color: #00769A}
+.ajax-scaffold th a {color: #fff; padding: 2px 15px 2px 5px}
+.ajax-scaffold th p {color: #eee; padding: 2px 5px}
+.ajax-scaffold th a:hover {background-color: #0076AA; color: #ff8}
+.ajax-scaffold th.sorted {background-color: #333}
+.ajax-scaffold th.asc a, .ajax-scaffold th.asc a:hover {background: #333 url(../images/arrow_up.gif) right 50% no-repeat}
+.ajax-scaffold th.desc a, .ajax-scaffold th.desc a:hover {background: #333 url(../images/arrow_down.gif) right 50% no-repeat}
+.ajax-scaffold th.loading a, .ajax-scaffold th.loading a:hover {background: #333 url(../images/indicator-small.gif) right 50% no-repeat}
+.ajax-scaffold td {padding: 5px 4px; color: #333; font-size: 95%; background-color: #E6F2FF; border-bottom: solid 1px #C5DBF7; border-left: solid 1px #C5DBF7}
+.ajax-scaffold td.actions {border-right: solid 1px #ccc}
+.ajax-scaffold tr.even td {background-color: #fff; border-left: solid 1px #ddd}
+.ajax-scaffold tr td.sorted {background-color: #B9DCFF; border-bottom: solid 1px #AFD0F5}
+.ajax-scaffold tr.even td.sorted {background-color: #E6F2FF; border-bottom: solid 1px #AFD0F5}
+.ajax-scaffold td.empty {color: #999; text-align: center}
+.ajax-scaffold td.actions {padding: 0; width: 1%}
+.ajax-scaffold td.actions table {float: right; width: auto; margin-right: 5px}
+.ajax-scaffold td.actions table td {border: none; text-align: right; padding: 0 2px}
+.ajax-scaffold td.actions a {font: bold 12px verdana, sans-serif; letter-spacing: -1px; padding: 2px; margin: 0 2px; line-height: 16px}
+.ajax-scaffold .ajax-scaffold-footer {text-align: right; background-color: #5BB2D1; padding: 3px 5px 2px 5px; border-bottom: none; color: #ccc; font: bold 12px arial, sans-serif}
+.ajax-scaffold-footer a, .ajax-scaffold-header a{ color: #fff; text-decoration: none; letter-spacing: 0; padding: 0 2px; margin: 0 -2px; font: bold 12px arial, sans-serif}
+.ajax-scaffold-footer a:hover, .ajax-scaffold-header a:hover {background-color: #378CDF}
+.ajax-scaffold-footer .next, .ajax-scaffold-header .next {margin-left: 0; padding-left: 5px; border-left: solid 1px #ccc}
+.ajax-scaffold-header .next{ float: right; margin-top: -20px; padding-right: 5px; margin-right: 10px}
+.ajax-scaffold-footer .previous {margin-right: 0; padding-right: 5px; border-right: solid 1px #ccc}
+.ajax-scaffold .messages-container, .ajax-scaffold .ajax-scaffold .messages-container{ padding: 0; margin: 0 7px; border: none}
+.ajax-scaffold .empty-message {background-color: #e8e8e8; padding: 4px; text-align: center; color: #666}
+.ajax-scaffold .message {font-size: 11px; font-weight: bold; padding: 5px 20px 5px 5px; color: #333; position: relative; margin: 2px 7px; line-height: 12px}
+.ajax-scaffold .message a {position: absolute; right: 10px; top: 4px; padding: 0; font: bold 11px verdana, sans-serif; letter-spacing: -1px}
+.ajax-scaffold .messages-container .message {margin: 0}
+.ajax-scaffold .error-message {border-left: solid 5px #f66; background-color: #fbb}
+.ajax-scaffold .warning-message {border-left: solid 5px #ff6; background-color: #ffb}
+.ajax-scaffold .info-message {border-left: solid 5px #66f; background-color: #bbf}
+.ajax-scaffold #errorExplanation {background-color: #fcc; margin: 2px 0; border: solid 1px #f66; float: left}
+.ajax-scaffold fieldset {clear: both}
+.ajax-scaffold #errorExplanation h2 {padding: 2px 5px; color: #333; font-size: 11px; margin: 0; letter-spacing: 0; font-family: Verdana; background-color: #f66}
+.ajax-scaffold #errorExplanation ul {margin: 0; padding: 0 2px 4px 25px; list-style: disc}
+.ajax-scaffold #errorExplanation p {font-size: 11px; padding: 2px 5px; font-family: Verdana; margin: 0}
+.ajax-scaffold #errorExplanation ul li {font: bold 11px verdana; letter-spacing: -1px; margin: 0; padding: 0; background-color: transparent}
+.ajax-scaffold .fieldWithErrors input {border: solid 1px #f00}
+.ajax-scaffold .loading-indicator {vertical-align: bottom; margin: 0}
+.ajax-scaffold .ajax-scaffold-header .loading-indicator, .ajax-scaffold .update .loading-indicator, .ajax-scaffold .create .loading-indicator {vertical-align: bottom; margin-bottom: 3px}
+.ajax-scaffold td.update, .ajax-scaffold td.create {background-color: #DAFFCD; padding: 4px; border: solid 1px #7FcF00; border-top: none}
+.ajax-scaffold .ajax-scaffold td.update, .ajax-scaffold .ajax-scaffold td.create {background-color: #ffb; border: solid 1px #DDDF37; border-top: none}
+.ajax-scaffold .submit {font-weight: bold; font-size: 14px; font-family: Arial, sans-serif; letter-spacing: 0; margin: 0; margin-top: 5px}
+.ajax-scaffold fieldset {border: none}
+.ajax-scaffold label.required{ font-weight: bold}
+.ajax-scaffold label.example {font-size: 11px; font-family: arial; color: #888}
+.ajax-scaffold h4 {padding: 2px; margin: 0; text-transform: none; color: #1F7F00; letter-spacing: -1px; font: bold 16px arial}
+.ajax-scaffold p.form-footer a {font: bold 14px arial, sans-serif; letter-spacing: 0}
+.ajax-scaffold p {clear: both}
+.ajax-scaffold div.row {clear: both; float: none; padding: 2px; margin-left: 5px}
+.ajax-scaffold div.form-element {float: left; margin-right: 10px; margin-bottom: 2px}
+.ajax-scaffold label {display: block; font-family: Verdana, sans-serif; color: #555; font-size: 11px; padding-bottom: 1px}
+.ajax-scaffold input.text-input, .ajax-scaffold select {font-size: 16px; font-weight: bold; font-family: Arial, sans-serif; letter-spacing: -1px; border: solid 1px #1F7F00}
+.ajax-scaffold .form-element input {padding: 1px}
+.ajax-scaffold textarea {height: 65px; font-family: Arial, sans-serif; font-size: 12px; padding: 1px; border: solid 1px #1F7F00}
+* html .ajax-scaffold-header {height: 1%}
+* html .ajax-scaffold td .messages-container {border-top: solid 1px #DAFFCD}
+#companies_tabnav {color: #fff; border-top: 2px solid; border-color:#5BB2D1; margin: 8px 0px 0px 0px; padding: 0px; z-index: 1; padding-left: 10px; line-height: 1.4em}
+#companies_tabnav li {display: inline; overflow: hidden; list-style-type: none}
+#companies_tabnav a,#companies_tabnav a.active {color: #407C92; font-weight: normal; padding: 1px 15px 3px 15px; border-left: 2px solid #EEEEEE; border-bottom: 2px solid #EEEEEE; border-right: 2px solid #EEEEEE; border-top: 2px solid #5BB2D1; text-decoration: none; font-size: 1.05em}
+#companies_tabnav {border-top: 2px solid; border-color:#5BB2D1}
+#companies_tabnav a, a:visited {color: #5BB1D1}
+#companies_tabnav a:hover {color: #407C92; border-top: 2px solid #FFF; border-left: 2px solid #5BB2D1; border-bottom: 2px solid #5BB2D1; border-right: 2px solid #5BB2D1}
+#companies_tabnav a.active {border-top: 2px solid #A9D6E7; border-left: 2px solid #5BB2D1; border-bottom: 2px solid #5BB2D1; border-right: 2px solid #5BB2D1; background: #A9D6E7; color: #407C92}
+#companies_tabnav a.active:hover {color: #FFF}
+#companies_tabnav a.loading{ border-top: 2px solid #FFF; border-left: 2px solid #5BB2D1; border-bottom: 2px solid #5BB2D1; border-right: 2px solid #5BB2D1; background: url(../images/indicator-small.gif) right 50% no-repeat}
+#company_chart {margin:0px; width:810px; height:200px; background-color:#dedeed; border:1px solid #999}
+div#statement_bar {padding-bottom: 0.5em}
+#statement_bar ul {padding: 0; margin: 0; list-style: none; text-indent: 0.0em; border-bottom: 1px solid #d6d7ff}
+#statement_bar ul li {display: inline; border-right: 1px solid #d6d7ff; margin:0; padding: 0pt 2pt 0pt 2pt}
+#statement_bar ul li.noborder {border-right: none}
+#statement_bar ul li a {color: #5BB1D1; padding: 0em 1em; text-decoration: none}
+#statement_bar ul li a:visited {text-decoration: none}
+#statement_bar ul li a:hover {color: #5BB1D1; text-decoration: none; border-top: 1px solid #5BB2D1; border-left: 1px solid #5BB2D1; border-right: 1px solid #5BB2D1}
+#statement_bar ul li a.loading{ color: #5BB1D1; border-top: 1px solid #5BB2D1; border-left: 1px solid #5BB2D1; border-bottom: 3px solid #FFF; border-right: 1px solid #5BB2D1; background: url(../images/indicator-small.gif) left 50% no-repeat}
+#statement_bar ul li a.active {padding: 0em 1em; border-top: 1px solid #d6d7ff; border-left: 1px solid #d6d7ff; border-bottom: 3px solid #FFF; border-right: 1px solid #d6d7ff; color: #407C92}
+#statement_bar ul li a.active:hover {text-decoration: none}
+#statement_bar hr {height: 1px; border: 0em; border-top: 1px solid #d6d7ff; margin: 0 !important; padding: 1pt}
+#statement_table{ border-top: 1px solid #FFFFFF; border-left: 1px solid #d6d7ff; border-bottom: 1px solid #d6d7ff; border-right: 1px solid #d6d7ff; position:relative; font-size: 0.9em}
+.loadingActive, .loadingStopped {position:absolute; left: 605px; top: 163px; visibility: visible; border: 2px solid red; font-weight: bold; vertical-align: top; font-size: 0.7em; background: #FFCCFF}
+.loadingStopped {visibility: hidden}
+#statement_table .statement_table {width: 980px; position: relative; top: 6px}
+#statement_table .statement_table thead {color: #FFF; background-color: #5BB2D1}
+#statement_table .statement_table thead th a, #statement_table .statement_table thead th a:hover, #statement_table .statement_table thead th a:visited{ margin: 0px 0px; padding: 0px 0px}
+#statement_table .statement_table thead th img{ float:left; margin: 0px 0px; padding: 0px 0px; cursor:pointer}
+#statement_table .statement_table tr.even td {background-color: #fff; border-left: solid 1px #ddd}
+#statement_table .statement_table td {padding: 4px 3px; color: #333; background-color: #E6F2FF; border-bottom: solid 1px #C5DBF7; border-left: solid 1px #C5DBF7; color: #000}
+#statement_table .statement_table tr.even td {background-color: #fff; border-left: solid 1px #ddd}
+#statement_table .statement_table tbody tr:hover td{ background-color:#B9DCFF; cursor:pointer}
+#statement_table .statement_table tbody tr.selected td{ background: #B9DCFF none repeat scroll 0%; border: 1px solid #5BB2D1}
+#statement_table .statement_table tbody tr td span.account {background: url(../images/buttonmin.gif) left 50% no-repeat; cursor:pointer}
+#statement_table .statement_table tbody tr td span.account_sitchoff {background: url(../images/buttonplus.gif) left 50% no-repeat; cursor:pointer}
+#statement_table .deleted_columns_parent{ color: #407C92}
+#statement_table .deleted_columns_parent a{ color: #5BB2D1; text-decoration: none; margin: 0px 0px; padding: 0px 0px}
+#statement_table .deleted_columns_parent a:hover{ text-decoration: underline; border: 0px none; margin: 0px 0px; padding: 0px 0px}
+#filter_box{ position: absolute; left: 100px; top: -2px}
+#filter_indicator{ margin: 5px 0px 5px 10px}
+#navigation{ position: absolute; top: 3px; left: 480px; width: 500px}
+#navigation #left-enabled{ float: left; margin: 0pt}
+#navigation #right-enabled{ float: right; margin: 0pt}
+#statement-chart-container{ position: relative; width: 400px; height: 85px}
+#statement-chart{ position: absolute; left: 385px; top: -18px}
+#navcontainer {background: #E6F2FF; margin: 6px 0 1px 0; padding: 9px 0 0 0; position: absolute; left: 0px; top: 6px; bottom: 7px; width: 370px}
+#navcontainer:after {content: "."; display: block; line-height: 1px; font-size: 1px; clear: both}
+ul#navlist {list-style: none; padding: 0; margin: 0 auto; width: 80%}
+ul#navlist li {display: block; float: left; width: 140px; margin:0px 0px; text-align:center; padding: 0}
+ul#navlist li a {display: block; width: 100%; padding: 1px; border-width: 1px; border-color: #ffe #aaab9c #ccc #fff; border-style: solid; color: #5BB1D1; text-decoration: none; background: #EEF2F7}
+#navcontainer>ul#navlist li a {width: auto}
+ul#navlist li#active a {background: #f0e7d7; color: #800000}
+ul#navlist li a:hover, ul#navlist li#active a:hover {color: #407C92; background: transparent; border-color: #aaab9c #fff #fff #555}
+.carousel-component {position:relative; overflow:hidden; visibility:visible}
+.carousel-component ul.carousel-list {width: 10000000px; position:relative; z-index:1}
+.carousel-component .carousel-list li {float:left; list-style:none; overflow:hidden}
+.carousel-component .carousel-vertical li {float:none; margin-bottom:0px}
+.carousel-component ul.carousel-vertical {width:auto}
+.carousel-component .carousel-clip-region {overflow:hidden; margin:0px auto; position:relative}
+.carousel-component {background:#FFF; padding:0 0 0 0; border: 0px; border-right: 0px}
+#ajax-carousel ul.carousel-list {margin:0px; padding:0px 0px 0px 0px; border-bottom: 0px}
+#ajax-carousel .carousel-list li {margin: 0px; padding:0px; border: 0px none}
+#overlay, .overlay {width: 100%; height: 100%; background-color: #FFF; position: absolute; top: 0px; left: 0px; padding-top: 30px; z-index: 100; color: #000; border:1px dotted #000; text-align: center; font-size: 24px; filter:alpha(opacity=80); -moz-opacity: 0.8; opacity: 0.8}
+#overlay, .overlay img{ position: relative; left: 43%}
+#stock_price {border:1px solid #EEEEEE; display: block; padding: 0.4em; padding-top: 1em; margin-top: -10px; background: #F0F0F0; width: 48%; float: right}
+#currency{ bottom:5px; font-size: 1.5em; font-weight:normal; position:relative}
+#price{ font-size:3em; margin-right: 0.2em; position:relative}
+#price_change{ font-size: 2em; margin-left: 12px}
+#stock_date{ float: left; color: #666666}
+#markets{ top:15px}
+pre {background-color: #eee; padding: 10px; font-size: 11px}
+#errorExplanation {width: 400px; border: 1px solid #CC0000; padding: 7px; padding-bottom: 0px; margin-bottom: 10px; background-color: #FFFFCC; font-family:Verdana; color: #c00}
+#errorExplanation h2 {text-align: left; font-weight: bold; padding: 5px 5px 5px 15px; font-size: 12px; margin: -7px; background-color: #c00; color: #FFFFCC}
+#errorExplanation p {color: #c00; margin-bottom: 0; padding: 5px}
+#errorExplanation ul li {color: #c00; font-size: 12px; list-style: square}
+div.uploadStatus {margin: 5px}
+div.progressBar {margin: 5px}
+div.progressBar div.border {background-color: #fff; border: 1px solid grey; width: 100%}
+div.progressBar div.background {background-color: #333; height: 18px; width: 0%}
+div.form-element p {clear:left}
+#member_submit_label, div.form-element label, label.submit_label {display:block; float:left; margin-right:12px; text-align:right; width:70px}
+#signup div.form-element label, label.submit_label{ width: 160px}
+#confirmation div.form-element label, #info_account div.form-element label, label.submit_label{ width: 120px}
+#big_button {width: 200px; background: #5BB2D1 no-repeat scroll 0%; color: #FFF; border:1px solid #407C92}
+div.form-element input, div.form-element textarea, div.form-element select{ border: 1px solid #5BB2D1; padding: 3px; margin-bottom: 10px; background-color: #FFF; font-family:Verdana; color:#555555; font-weight:bold; width: 300px}
+#signup div.form-element input, #info_account div.form-element input, #confirmation div.form-element input {width: 200px}
+div.form-element textarea{ height: 230px; font-size: 12px }
+div.form-element input.button {height: 28px; background: #E6F2FF; padding: 2px; color: #407C92; border:1px solid #5BB2D1; margin-right:10px; cursor:pointer; display:block; float:right; width: 312px}
+div.form-element input.button:hover {border:1px solid #5BB2D1; color:#FFF; background: #AFD0F5}
+div.form-element .fieldWithErrors input, .fieldWithErrors textarea{ border:2px solid #c00}
+fieldset {margin-top: 5px; padding: 5px; background: transparent; border-style: double; border-width: 1px; border-color: #5BB2D1; font-weight: normal; width: 50%}
+#notice {background: #ffc; border: 2px solid #0066CC; color: #0066CC; font-weight: bold; margin-bottom: 20px; padding: 6px; text-align: left; vertical-align: bottom; width: 70%}
+body {padding: 0; margin: 0; font: 0.74em Arial, Helvetica, sans-serif; line-height: 1.5em; background: #FFF; color: #000}
+a {color: #0E4D8B; background: inherit}
+a:hover {color: #5BB1D1; background: inherit;}
+a.title {color: #B41A1A; background: #FFF}
+h1 {font-weight: bold;font-size: 2em; letter-spacing: -1px; padding: 16px 0 0 8px; margin: 0}
+h2 , #logo {margin: 0; padding: 0; font-size: 1.6em; font-weight: bold;letter-spacing: -1px}
+h1 a {color: #FFF; background: inherit}
+h1 a, h2 a, #logo a {text-decoration: none}
+h1 a:hover, h2 a:hover {color: #BFE1ED; background: inherit}
+h3 {font-size: 90%; margin: 0 0 10px 0; padding: 0; color: #5f5f5f; background: #FFF}
+p {margin: 0 0 0px 0; line-height: 1.5em}
+#logo {font-size: 2em;color: #FFF; position: relative; top: 20px; width: 180px;line-height: 1em;}
+#logo a{color: #FFF;}
+#i {font-weight: bold; font-size: 1.5em; letter-spacing: -1px; color: #FF4500;}
+form {margin: 0}
+input.search, input.search_statement{ width: 199px; border: none; background: #FFF url(../images/input.gif) no-repeat; padding: 3px; color: #555; font-size: 110%; font-weight: bold}
+input.search_statement {width: 170px; padding: 3px; border: 2px solid #FFF; color: #C0C0C0; display: inline; font-size: 100%}
+input.selected {background: #FFF url(../images/selected_input.gif) no-repeat; color: #5BB2D1}
+.bold {font-weight: bold}
+input.submit {border: none; height: 28px; width: 80px; background: #5BB2D1 url(../images/button.gif) no-repeat; padding: 2px; color: #FFF; border:1px solid #407C92; cursor:pointer}
+input.submit:hover {border:1px solid #BFE1ED; color:#BFE1ED}
+button{ border: none; background: #FFF url(../images/button_inactive.gif) no-repeat; color: #C0C0C0; height: 25px; text-align:center; font-weight: bold; width: 55px; display: inline; cursor:pointer}
+button.selected {background: url(../images/button_blue.gif) no-repeat; border: none; color: #5BB2D1}
+button.selected:hover{ background: url(../images/button_blue_hover.gif) no-repeat; color: #FFF}
+.content {margin: 10px auto; width: 1005px; background: #FFF url(../images/big_middle.gif) repeat-y; color: #000}
+.header_top {background: #FEFEFE url(../images/big_top.gif) no-repeat; color: #FFF; height: 15px}
+.header {padding: 0px 10px 0 10px}
+.header_bottom {clear: both; background: #FEFEFE url(../images/big_bottom.gif) no-repeat; color: #FFF; height: 15px}
+#nav {width:100%; float:right}
+#nav ul {margin:0; list-style:none; padding: 0}
+#nav a, #nav strong, #nav span {float:right; display:block; color:#fff; padding: 7px 20px 4px 10px; background: #5BB2D1 url(../images/nav.gif) no-repeat 100% 0px; text-decoration:none; font-weight: bold}
+#nav a {float:none}
+#nav li {float:right; color: #FFF; background: #5BB2D1 url(../images/nav.gif) no-repeat 0px 0px; margin:0; padding:0 0 0 9px}
+#nav a:hover {color:#BFE1ED; background: #5BB2D1 url(../images/nav.gif) no-repeat 100% 0px}
+#nav li.active {background: #A9D6E7 url(../images/nav.gif) no-repeat 0 -41px; color: #407C92;}
+#nav a.active, #nav a:hover.active{ background: #A9D6E7 url(../images/nav.gif) no-repeat 100% -41px; padding:7px 20px 4px 4px; color:#407C92;}
+#nav a:hover.active {color:#FFF;}
+.sf_left {float: left; width: 203px; height: 77px; background: #5BB2D1 url(../images/logobg.gif) repeat-x; color: #FFF; padding: 10px 0 0px 7px}
+#search_box img{float: left; margin-top: -50px;margin-left: 63px;}
+#ex {float: left; margin-top: 0px; margin-left: 230px; font-size:0.85em; color:#BFE1ED;}
+.sf_right {width: 987px; float: right; margin-top: -4px}
+.sf_search {clear: both; background: #A9D6E7 url(../images/logobg.gif) repeat-x bottom left; color: #FFF; padding: 1px 0px 4px 0px}
+#head_title {font-weight: bold; font-size: 1em; letter-spacing: -1px; padding: 2px 0 0 0px; margin: 0px 0px; color: #FFF; background: #A9D6E7 url(../images/head_title_bg.gif) repeat-x bottom left; line-height:1.2em}
+#header_block{ margin: 0px 6px}
+#head_title h1{ font-size: 1.6em; padding: 2px 0 0 0; margin: 0}
+.left {float: left; width: 825px; margin: 0 0 10px 0}
+.box_top {background: #F0F0F0 url(../images/leftbox_top.gif) no-repeat; color: #FFF; height: 40px; width: 159px}
+.box_top h2 {color: #FFF; background: inherit; padding: 7px 0 0 5px; margin: 0; font-weight: normal}
+.box {border-left: 2px solid #A9D6E7; border-right: 2px solid #A9D6E7; padding: 0px 4px 0 7px; margin: 0; width: 144px; color: #595959; background: #FFF}
+.box_bottom {background: #FFF url(../images/leftbox_bottom.gif) no-repeat; color: #000; height: 13px; width: 160px; margin: 0 0 7px 0}
+.left_side {float: left; width: 159px; padding: 0px 5px 8px 8px}
+.right_side {float: right; width: 810px; margin: 0 5px 0 0; text-align: justify}
+.expanded_panel{ width: 982px; float: left; margin: 0px 5px 0px 5px; padding-left:5px}
+.article {padding: 0 5px 0 0px; margin-bottom: 20px}
+.article a{text-decoration: none;}
+.article h2{color: #C83F55;}
+.grey_top {clear: both; width: 517px; background: #EDEDED url(../images/grey_top.gif) no-repeat; color: #000; height: 5px; padding: 0; margin: 30px 0 0 6px}
+.grey {width: 500px; margin: 0px 0 0 6px; padding: 10px; background: #EDEDED url(../images/grey_bottom.gif) no-repeat bottom left; color: #808080}
+.grey a {color: #C83C3C; background: inherit; font-weight: bold}
+.grey a:hover {color: #000; background: #EDEDED}
+.highlight {padding: 5px 3px 5px 3px; margin: 0 0 3px 0; border-bottom: 1px solid #ccc}
+.right {float: right; width: 170px; margin: 0 0 10px 0;}
+img {float: left; margin: 0 9px 3px 0}
+.footer hr {height: 1px; border: 0em; border-top: 1px solid #d6d7ff; margin: 1em 5px !important}
+.footer {clear: both; text-align: center; color: #808080; padding: 10px 0 5px 0; border-top: 1px solid #eee}
+.footer p {line-height: 2em}
+.footer a, .footer a:visited {font-size: 0.9em; color: #4F4F4F; background: #f0f0f0; border-bottom: 1px dotted #808080; text-decoration: none}
+.footer a:hover {border-bottom: none; color:#407C92}
+#company_footer {border-bottom: none; font-family: courier new,monospace; color:#C83F55; font-size: 16px; font-weight: bold;}
+div.auto_complete {background:#BFE1ED none repeat scroll 0%; width: 205px; color: #407C92; text-align: left; z-index: 15; font-weight: normal}
+div.auto_complete ul {border:1px solid #407C92; list-style-type:none; margin:0pt; padding:0pt; width:100%}
+div.auto_complete ul li {margin:0pt; padding:3px}
+div.auto_complete ul li.selected {background-color:#A9D6E7}
+div.auto_complete ul strong.highlight {color: black; margin:0pt; padding:0pt}
+#add_portfolio_withholding_remote div.auto_complete{ font-size: 81%; width: 190px}
+.no_display{ visibility: hidden}
+.hover{ border: 1px solid blue; color: blue}
+#modal_overlay {background-color:#000000; position: absolute}
+#modal_container {overflow:auto; padding:5px; text-align:left}
+.modal_container{ background-color:#FFFFFF; border:1px solid #666666; color:#333333}
+.hover_modal_container{ background-color:#EEF2F7; border:1px solid #5BB2D1; color:#407C92}
+div.hdg {background-color:#E5ECF9}
+.hdg span{ color: #000000; border-bottom: 1px solid #DDDDDD; line-height:1.5em; margin: 0 9px 3px 0; width: 48%}
+ul.underlineList {list-style-type:none; margin-bottom:1em; padding-left:0.3em}
+ul.underlineList li {border-bottom:1px solid #D8F0FC; font-family:arial,sans-serif; font-size:0.9em; font-size-adjust:none; font-stretch:normal; font-style:normal; font-variant:normal; font-weight:normal; line-height:normal; list-style-type:none; padding:0.5em 0pt; width:100%}
+.float_right span{ float: right}
+.float_left span{ float: left}
+.hdg h4{ font-size:1em; line-height:2em; color: #407C92}
+.todo {margin: 30px 30px 30px 0; line-height:1.5em; color: #C77905}
+div.theme, div.theme_red, div.theme_orng {margin-bottom: 1em; padding: 1px; background: #F4F7FB none repeat scroll 0%; border: 1px solid #D3DAE4}
+div.theme_orng {background: #FCF4E4 none repeat scroll 0%; border: 1px solid #F9E2AD; width: 99%}
+.theme h2, .theme_red h2, .theme_orng h2 {background:#B9C4DC url(../images/h2v2.jpg) repeat-x scroll 0%; border-bottom:1px solid #93A7CA; color:#343F55; font-size:0.9em; font-size-adjust:none; font-stretch:normal; font-style:normal; font-variant:normal; line-height:normal; padding:0.2em 0.2em 0.2em 0.5em; position:relative; text-transform:uppercase; z-index:1}
+.theme_red h2 {background: #CA2400 url(../images/h3_red_bg.gif) repeat-x scroll center top; border-bottom:1px solid #A81E00; color:#FFFFFF}
+.theme_orng h2 {background:#F8CA62 url(../images/h2_orng.jpg) repeat-x scroll 0%; border-bottom:1px solid #EBB435; color:#C77905}
+#theme_footer{ clear:both; margin:1em; text-align:center}
+table.two_columns, table.four_columns{ background:#FFFFFF none repeat scroll 0%; margin:5px; width:96%}
+table.two_columns td.left_cell, table.four_columns td.left_cell {color:#666666; font-weight:bold; text-align:right}
+table.two_columns td.left_cell{ width:30%}
+table.four_columns td.left_cell {text-align: left; width: 24%}
+table.four_columns td.right_cell {text-align: right; width: 25%}
+table.two_columns td.right_cell {text-align:left; width:60%}
+table.two_columns td, table.four_columns td {border-bottom:1px solid #DBEAFB; font-family:arial,sans-serif; font-size: 1em; font-weight:normal; line-height:normal; padding: 0.1em 1em 0em 0.5em; vertical-align: top}
+table.four_columns td {padding: 0.1em 0.1em 0em 0.2em; font-size: 0.9em}
+table.four_columns tr.divider{ background-color:#DBEAFB; color: #000}
+table.four_columns td.column_divider{ width: 1%; border-left: 1px solid #DBEAFB; border-right: 1px solid #DBEAFB; border-bottom: none}
+.leftColumn {float:left; position:relative; width: 49.5%}
+.rightColumn {float:right; width: 49.5%}
+#mainContent {border-right:1px solid #EEEEEE; float:left; margin-left:0.5em; padding:0.6em 1em 0.5em 0pt; width:100%}
+.green{ color: #7BB938}
+.red{ color: red}
+#companies_confirm, #account_login_remote, #add_portfolio_withholding_remote {color: #0076AA; background-color: #E6F2FF; border: 1px solid; border-color:#5BB2D1; margin: 0px; padding: 10px; z-index: 1; padding-left: 0; line-height: 1em; font-size: 1.1em; font-weight: bold}
+#add_portfolio_withholding_remote{ background-color: #E6F2FF; border-color: #F9E2AD; color: #C77905}
+#account_login_remote input, #add_portfolio_withholding_remote input, #add_portfolio_withholding_remote select {border: 1px solid; border-color:#5BB2D1; background-color: #FFFFFF; color: #0076AA; font-weight: bold}
+#add_portfolio_withholding_remote table th, #add_portfolio_withholding_remote table td{ text-align: center; vertical-align: top}
+#account_login_remote input.submit, #add_portfolio_withholding_remote input.submit{ border:1px solid #407C92; color:#FFFFFF}
+#account_login_remote input.submit:hover, #add_portfolio_withholding_remote input.submit:hover{ border:1px solid #BFE1ED; color:#BFE1ED}
+#companies_confirm li {display: inline; overflow: hidden; list-style-type: none}
+#companies_confirm a, a.button1 {color: #FFF; font-weight: normal; padding: 1px 15px 3px 15px; border-left: 1px solid #5BB2D1; border-bottom: 1px solid #5BB2D1; border-right: 1px solid #5BB2D1; border-top: 1px solid #5BB2D1; text-decoration: none; background-color: #5BB2D1}
+#companies_confirm a:hover, a.button1:hover {color: #5BB2D1; background-color: #E6F2FF}
+a.button1 {font-weight: bold}
+.about h1{ color: #C83F55; font-size: 20px; text-align: center}
+td.symbol, a.symbol, td.symbol a:visited, td.symbol a:hover{ text-align:left; color: #999999; width: 50%; padding: 0}
+td.num_value{ text-align:right; color: #999999; width: 50%}
+tr.top_movers_odd{ background: #FFF none repeat scroll 0%}
+tr.top_movers_even{ background: #E0EDF8 none repeat scroll 0%}
+.loginbox div.errorMessage, #accounterror {text-align: left; padding: 0.3em; font-size: 1em; margin: 0 0 10px 0; color: #c00; background: #ffc; border-color: #c00; border-style: solid; border-width: 1px 1px 1px 1px}
+.comment{ font-size: 80%; color: #5F5F5F; font-weight: normal}

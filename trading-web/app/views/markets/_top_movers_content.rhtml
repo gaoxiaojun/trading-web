@@ -1,0 +1,29 @@
+<div style="width: 145px;">
+  <% @top_movers = top_mover_type.top_movers %>
+    <%   if @top_movers.nil? or @top_movers.empty? %>
+    <br/><br/><br/><br/>
+    <center><strong>Sorry, no current data!</strong></center>
+    <% else %>
+    <table width="100%">
+        <tr><td colspan="2" class="green"><strong><%= top_mover_type.desc_top_title %></strong></td></tr>
+            <tr>
+              <td class="symbol">Symbol</td>
+              <td class="num_value"><%= top_mover_type.column_name %></td>
+            </tr>
+              <% half = @top_movers.size/2%>
+        <% for i in 0...@top_movers.size do  %>
+          <%   if half == i %>
+            <tr><td colspan="2" class="red" ><strong><%= top_mover_type.desc_bottom_title %></strong></td></tr>
+            <tr>
+              <td class="symbol">Symbol</td>
+              <td class="num_value"><%= top_mover_type.column_name %></td>
+            </tr>
+         <% end %>
+          <tr class="<%= i%2==0 ? 'top_movers_even' : 'top_movers_odd' %>">
+            <td align="left" width="50%"><a style="color: #595959; padding: 0;" href="/companies/<%=@top_movers[i].company_id%>"><%= @top_movers[i].stock_symbol %></a></td>
+            <td align="right" width="50%"><%= eval(top_mover_type.format.call("@top_movers[i].send('#{top_mover_type.field_name}')")) %></td>
+          </tr>
+        <% end %>
+    </table>
+    <% end %>
+</div>

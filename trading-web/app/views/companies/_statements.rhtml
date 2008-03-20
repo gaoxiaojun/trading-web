@@ -1,0 +1,25 @@
+<% if @table.size == 0 %>
+  <p>No statement found...</p>
+<% else %>
+<table id="statementTable<%= type_id %>" class="statement_table">
+  <thead>
+    <tr>
+       <% acc = true %>
+       <% @table.delete_at(0).flatten.each do |col| %>
+         <th <%= "width='480px'" if acc %> align="<%= col.html_align %>" id="<%= col.to_html %>" ><%= if !acc and !@print_preview then "<span onmouseover=\"delHover(this);\" onmouseout=\"normalDel(this);\"><img src='/images/del.gif' border='0'  onclick=\"hideColumn('#{col.to_html}');\" alt='hide'/></a>" << col.to_html else col.to_html end%></th>
+          <% acc = false %>
+       <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @table.each do |row| %>
+    <% columns = row.flatten %>
+       <tr <% if !@print_preview %> onmouseover="showSwitch(this.id);" onmouseout="hideSwitch(this.id);" onclick="onSelectElement(this);"<% end %> class="<%= cycle("even","odd") + if columns[0].level < (type_id.to_s == '2' ? 2 : 1) then ' bold' else '' end %>" value="<%= columns[0].level %>" id="rowId:<%= type_id.to_s + columns[0].id.to_s %>">
+       <% columns.each do |col| %>
+          <td  align="<%= col.html_align %>"><%= col.to_html %></td>
+       <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

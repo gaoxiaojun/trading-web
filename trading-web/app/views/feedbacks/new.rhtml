@@ -1,0 +1,61 @@
+<div class="article">
+<% edit_action = flash[:edit]  %>
+<h2><%= edit_action ? 'Edit ' : 'Add ' %>Feedback</h2>
+<h3>Feedbacks are what we value the most! Thank You!!!</h3>
+<%= error_messages_for :feedback %>
+<fieldset class='form' title="Feedback" >
+  <legend><strong>Feedback</strong></legend>
+  <% form_for(:feedback, :url => edit_action ? feedback_path(@feedback) : feedbacks_path, :html => { :method => edit_action ? 'put' : 'post' }) do |f| %>
+  <input name="feedback[key]" type="hidden" value="<%=params[:key]%>"/>
+  <div class="form-element" >
+      <p>
+          <label for="feedback_email" class="required"><strong>*Email:</strong></label>
+          <%= f.text_field :email, :maxlength => 64 %>
+      </p>
+  </div>
+   <div class="form-element" >
+      <p>
+          <label><strong>Note:</strong></label>
+          <span style="color: #5F5F5F; font-size: 90%;">Your email will never be displayed </span>
+          <label><strong>&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
+          <span style="color: #5F5F5F; font-size: 90%;">and will be removed from the system immediately after the request is processed.</span>
+      </p>
+      <br/>
+    </div>
+    <div class="form-element" >
+        <p>
+            <label for="feedback_category" class="required"><strong>*Category:</strong></label>
+            <select name="feedback[category]"  id="feedback_category" >
+                <%=  options_for_select Feedback::CATEGORY_OPTIONS, @feedback.category %> 
+            </select>
+        </p>
+    </div>
+    <div class="form-element" >
+      <p>
+          <label for="feedback_subject" class="required"><strong>*Subject:</strong></label>
+          <%= f.text_field :subject, :maxlength => 256%>
+      </p>
+  </div> 
+  <div class="form-element" >
+      <p>
+          <label for="feedback_description:" class="required"><strong>*Description:</strong></label>
+          <%= f.text_area :description %>
+      </p>
+  </div> 
+  <div class="form-element" 
+        <p>
+          <% if edit_action %>
+            <%= submit_tag "Update", :class => 'button'  %>
+         <% else %>
+            <%= submit_tag "Send", :class => 'button'  %>
+         <% end %>
+        </p>
+    </div>
+ <% end %>
+</fieldset>
+<br/>
+<% if edit_action %>
+<%= link_to 'Show', feedback_path(@feedback) %> | 
+<% end %>
+<%= link_to 'View all feedbacks?', feedbacks_path %>
+</div>

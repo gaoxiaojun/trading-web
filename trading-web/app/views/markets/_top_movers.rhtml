@@ -1,0 +1,36 @@
+<div id="statement_bar">
+    <ul style="border-color: #5BB2D1"> 
+        <% SqlCommandType::TOP_MARKET_MOVERS_TYPES.each do |type| %>
+          <li >
+              <%= link_to_remote type, 
+                { :url => {:controller => 'markets', :action => "top_movers", :id => type},
+                :method =>  'get', :update => "ajax-carousel-li#{type}",
+                :loading => "select_tab('tab_#{type}');",
+                :loaded =>  "activate_tab('tab_#{type}', 'top_movers');",
+                :complete => "scroll('#{SqlCommandType::TOP_MARKET_MOVERS_TYPES.index(type) + 1}');" },
+                { :href => url_for(:controller => 'markets', :action => "top_movers", :id => type) , 
+                :class => "#{type ==SqlCommandType::TOP_MARKET_MOVERS_TYPES[0]?'active':''}", :id => "tab_#{type}", :style=>"padding: 0px;padding-right: 2px;border-color: #5BB2D1 #5BB2D1 #FFF"}%>
+          </li>
+        <% end %>
+    </ul>
+    <div id="top_movers">
+        <div class="carousel-component" id="ajax-carousel">
+            <div class="carousel-clip-region" id="carousel-reg">
+                <ul class="carousel-list" id="ajax-carousel-ul">
+                    <% SqlCommandType::TOP_MARKET_MOVERS_TYPES.each do |type| %>
+                      <li id="ajax-carousel-li<%=type %>">
+                          <div style="width: 145px; height: 320px;">
+                              <% if SqlCommandType::TOP_MARKET_MOVERS_TYPES[0] == type %>
+                                 <%= render :partial => '/markets/top_movers_content', :locals => { :top_mover_type => type} %>
+                              <% else %>
+                                <div><img src='/images/indicator.gif'/>Loading...</div>
+                                &nbsp
+                              <% end %>
+                          </div>
+                      </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

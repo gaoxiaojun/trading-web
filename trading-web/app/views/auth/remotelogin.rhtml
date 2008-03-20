@@ -1,0 +1,15 @@
+<% if not @err.nil? and @err == 2 %>
+  <div id="accounterror" >
+      <strong>Oops, unknown username or password.<br/>Have you signed up yet?<br/>If you've forgotten your password, we can email it to you.</strong>
+  </div>
+  <%= render :partial => "remotelogin" %>
+  <%= javascript_tag("document.getElementById('post_login').focus();") %>
+  <% elsif not @err.nil? and @err == 0 %>
+  <div id="accounterror" style="width: 550px;font-size: 140%;padding: 4px; margin: 0px;text-align: center;">
+   <img src="/images/spinner.gif" alt="spinner"/>Login successfull!
+  </div>
+  <%= javascript_tag "new Ajax.Updater('accountinfo', '#{auth_url(:action => 'remoteinfo')}', {asynchronous:true}); setTimeout(function(){Control.Modal.close(); if($('notice')){Element.hide('notice'); }; }, 700);" %>
+<% else %>
+    <%= render :partial => "remotelogin" %>
+    <%= javascript_tag("document.getElementById('post_login').select();") %>
+ <% end %>

@@ -1,0 +1,7 @@
+<div class="hdg">
+  <b><%= @company.name%></b> - <%= @company.type.name.capitalize%> &nbsp; ( <%= @company.stock_symbol %>)
+</div>
+<br/>
+<div id="tab_content">
+ <%= render :partial => "statements", :locals =>{:type_id => params[:type]} %>
+</div>

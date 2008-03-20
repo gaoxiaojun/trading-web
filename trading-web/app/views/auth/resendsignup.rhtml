@@ -1,0 +1,19 @@
+<div class="article">
+    <h2>Resend Confirmation Key</h2>
+    <h3>Sorry, but we really need to do this step.</h3>
+    <% if flash['notice'] %>
+      <div id="notice"><strong><%= flash['notice'] %></strong></div>
+    <% elsif flash['errors']%>
+      <div id="errorExplanation" class="errorExplanation"><strong><%= flash['errors'] %></strong></div>
+    <% end %>
+    <fieldset class='form'>
+        <legend><strong>Resend Confirmation Form</strong></legend>
+        <% form_for :post, :url => { :action => "resendsignup" } do |f| %>
+          <p>
+              Please enter your email address:
+          </p>
+          <%= f.text_field :email, :size => 30, :value => @email, :style=>"width: 180px" %>&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Resend &#187;" class="submit" id="big_button" />
+          <br/><br/>
+        <% end %>
+    </fieldset>
+</div>
