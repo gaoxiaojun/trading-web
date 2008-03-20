@@ -1,0 +1,26 @@
+<h1>New stock_quote</h1>
+
+<%= error_messages_for :stock_quote %>
+
+<% form_for(:stock_quote, :url => stock_quotes_path) do |f| %>
+  <p>
+    <b>Timepoint</b><br />
+    <%= f.datetime_select :timepoint %>
+  </p>
+
+  <p>
+    <b>Price</b><br />
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <b>Company</b><br />
+    <%= f.text_field :company_id %>
+  </p>
+
+  <p>
+    <%= submit_tag "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', stock_quotes_path %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Timepoint:</b>
+  <%=h @stock_quote.timepoint %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @stock_quote.price %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%=h @stock_quote.company_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_stock_quote_path(@stock_quote) %> |
+<%= link_to 'Back', stock_quotes_path %>

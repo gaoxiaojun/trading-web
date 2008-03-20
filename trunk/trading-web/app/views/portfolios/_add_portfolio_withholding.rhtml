@@ -1,0 +1,75 @@
+<div id='add_portfolio_withholding_remote'>
+    <%= error_messages_for :withholding %>
+    <% if flash[:remote_notice] %>
+      <div id="notice"><strong><%= flash[:remote_notice] %></strong></div>
+    <% end %>
+    <% form_remote_tag( 
+      :update=> 'modal_container', 
+      :url => {:controller => 'portfolios', :action => 'add_portfolio_withholding', :id=>@portfolio.id},
+      :loading => "Element.show('ident_spinner');",
+      :complete =>  "init_add_portfolio();"
+    ) do %>
+    
+      <table cellpadding="0" cellspacing="0" border="0" id="statementTable1">
+          <thead>
+              <tr>
+                  <th><label for="add_symbol">Stock Symbol</label></th>
+                  <th></th>
+                  <th><label for="transaction_type">Type</label></th>
+                  <th></th>
+                  <th><label for="shares">Shares</label></th>
+                  <th></th>
+                  <th id="option_date_th"><label for="option_date">Date</label></th>
+                  <th></th>
+                  <th id="portfolio_price_th"><label for="portfolio_price">Price&nbsp;&nbsp;&nbsp;</label></th>
+                  <th></th>
+                  <th><label for="pitch">Pitch</label></th>
+                  <th></th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>
+                      <input type="text" size="11" autocomplete="off" value="<%= @withholding.stock_symbol %>" name="search[term]" id="add_symbol"/>
+                      <div id="pf_auto_comp_div" class="auto_complete" style="display: none;"></div>
+                  </td>
+                  <td width='7'>&nbsp;</td>
+                  <td>
+                      <select name="withholding[transaction_type]"  id="transaction_type" style="width: 110px;" onChange="onPortfolioTypeChange($('transaction_type'));loadStockProp();">
+                          <%=  options_for_select TransactionType.select_options, @withholding.transaction_name %> 
+                      </select>
+                  </td>
+                  <td width='7'>&nbsp;</td>
+                  <td><%= text_field "withholding", "shares", :size => 7, :onfocus=>"loadStockProp();" %></td>
+                  <td width='7'>&nbsp;</td>
+                  <td><%= text_field  "withholding", "date", :size => 8, :value=> @withholding.default_date, :id=>"option_date", :onfocus=>"pickDate(this);", :onclick=>"" %></td>
+                  <td width='7'>&nbsp;</td>
+                  <td><%= text_field  "withholding", "price", :size => 8, :id=> "portfolio_price", :onfocus=>"loadStockProp();" %></td>
+                  </td>
+                  <td width='7' align="left"><span class="comment">(BGN)&nbsp;&nbsp;&nbsp;</span></td>
+                  <td><%= text_field "withholding", "pitch", :size => 30, :maxlength => 500, :id=> "pitch" %></td>
+                  <td width='7'>&nbsp;</td>
+                  <td rowspan="2"><%= spinner_tag %><input type="submit" value="Add &#187;" class="submit"/></td>
+              </tr>
+              <tr>
+                  <td><span class="comment">(Ex: Himko)<br/>start typing for<br/>auto completition ...</span></td>
+                  <td></td>
+                  <td><span class="comment">'Sell' type is when<br/>buying the option<br/>to sell it at the<br/>selected price on<br/>the selected date</span></td>
+                  <td></td>
+                  <td><strong><span id="stock_price1" class="comment" style="color: #000; font-weight: bold;">&nbsp;</span></strong></td>
+                  <td></td>
+                  <td><span class="comment">(optional)<br/>predict stock price<br/>unless tomorrow's<br/>date selected</span></td>
+                  <td></td>
+                  <td>
+                      <strong><span id="stock_price2" class="comment" style="color: #000; font-weight: bold;"></span></strong><br/>
+                      <span class="comment">(optional)<br/>compared to closing<br/>price for the<br/>specified date</span><br/>
+                  </td>
+                  <td></td>
+                  <td width="200px"><span class="comment"><div id="pitch_display_preview">(optional)<br/>You can enter your highly opinionated prediction whether to buy or sell this stock.</div></span></td>
+                  <td></td>
+              </tr>
+          </tbody>
+      </table>
+    <% end %>
+</div>

@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>feedback</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">feedback</td></tr>
+</thead><tbody>
+<tr><td>open</td><td>/selenium/setup</td><td></td></tr>
+<tr><td>open</td><td>/</td><td></td>::: FEEDBACK :::</tr>
+<tr><td>verifyTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Feedback</td><td></td></tr>
+<tr><td>verifyTitle</td><td>|::. openTrade - Feedbacks .::|</td><td></td></tr>
+<tr><td>clickAndWait</td><td>commit</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>5 errors prohibited this feedback from being saved</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Category can't be blank</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Subject can't be blank</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Description can't be blank</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Email email must be valid</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Email can't be blank</td><td></td></tr>
+<tr><td>type</td><td>feedback_email</td><td>igorstoyanov@gmail.com</td></tr>
+<tr><td>select</td><td>feedback_category</td><td>label=Feature request</td></tr>
+<tr><td>type</td><td>feedback_subject</td><td>Cool stuff!</td></tr>
+<tr><td>type</td><td>feedback_description</td><td>Test</td></tr>
+<tr><td>clickAndWait</td><td>commit</td><td></td></tr>
+<tr><td>verifyTitle</td><td>|::. openTrade - Feedbacks .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Your Feedback was successfully created.Thank you! We really appreciate you participation.</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Review Feedback</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Email: igo...</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Category: Feature request</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Subject: Cool stuff!</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Description: Test</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Edit</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Edit Feedback</td><td></td></tr>
+<tr><td>type</td><td>feedback_subject</td><td>Cool Stuff Edited!</td></tr>
+<tr><td>clickAndWait</td><td>commit</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Review Feedback</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Your Feedback was successfully updated.Thank you! We really appreciate you participation.</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Subject: Cool Stuff Edited!</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Edit</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Edit Feedback</td><td></td></tr>
+<tr><td>type</td><td>feedback_description</td><td></td></tr>
+<tr><td>clickAndWait</td><td>commit</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>1 error prohibited this feedback from being saved</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Description can't be blank</td><td></td></tr>
+<tr><td>type</td><td>feedback_description</td><td>Edited test</td></tr>
+<tr><td>clickAndWait</td><td>commit</td><td></td></tr>
+<tr><td>selectWindow</td><td>null</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Review Feedback</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Description: Edited test</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Delete</td><td></td></tr>
+<tr><td>verifyConfirmation</td><td>Are you sure?</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Feedbacks</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>The Feedback was successfully deleted!</td><td></td></tr>
+
+</tbody></table>
+</body>
+</html>

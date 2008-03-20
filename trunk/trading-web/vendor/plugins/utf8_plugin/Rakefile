@@ -1,0 +1,27 @@
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+desc 'Run all the tests by default'
+task :default => :test
+
+desc 'Run all the tests'
+Rake::TestTask.new do |t|
+    t.libs << "lib"
+    t.test_files = FileList['test/*_test.rb']
+    t.verbose = true
+end
+
+desc 'Generate documentation'
+Rake::RDocTask.new(:doc) do |rdoc|
+  rdoc.rdoc_dir = 'doc'
+  rdoc.title    = 'UTF-8 Plugin'
+  rdoc.options  << '--line-numbers' << '--charset=utf-8' << '--main=README'
+  rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.rdoc_files.include('LICENSE')
+  rdoc.rdoc_files.include('README')
+end
+
+desc 'Upload documentation'
+task :upload_doc => [:doc] do
+  `rsync -arvz ./doc/ mstienstra@sugardaddy.dreamhost.com:multibyterails.org/public/documentation/utf8_plugin`
+end

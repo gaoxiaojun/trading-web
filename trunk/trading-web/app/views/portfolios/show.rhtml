@@ -1,0 +1,26 @@
+<div id="head_title">
+    <div id="header_block">
+        <h1><%= 'Igor\'s Portfolio'%></h1>
+        Something Else
+    </div>
+</div>
+
+<ul id="companies_tabnav">
+    <li><!--%= link_to_remote "Overview", 
+          { :url => { :action => "overview", :id => @portfolio.id },
+          :method =>  'get', :update => "tab_content"},
+          { :href => url_for(:action => 'overview', :id => @portfolio.id) , :class => 'active', :id => "overview_tab"}%-->
+          <a href="#" id="overview_tab" class="active">Overview</a>
+      </li>
+</ul>
+<div id="tab_content">
+    <br/>
+<hr/>
+<br/>
+  <p>
+        <b>Amount:</b>
+        <%=h @portfolio.amount %>
+    </p>
+    <hr/>
+    <%= add_portfolio_withholding_popup %>
+</div>

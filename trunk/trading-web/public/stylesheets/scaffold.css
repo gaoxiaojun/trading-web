@@ -1,0 +1,160 @@
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+
+#errorExplanation {
+  width: 400px;
+  border: 1px solid #CC0000;
+  padding: 7px;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  background-color: #FFFFCC;
+  font-family:Verdana;
+  color: #c00;
+}
+
+#add_portfolio_withholding_remote #errorExplanation{
+    width: 99%;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #FFFFCC;
+}
+
+#errorExplanation p {
+  color:  #c00;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  color:  #c00;
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+div.form-element p {
+    clear:left;
+}
+
+#member_submit_label, div.form-element label, label.submit_label {
+    display:block;
+    float:left;
+    margin-right:12px;
+    text-align:right;
+    width:70px;
+}
+
+#signup div.form-element label, label.submit_label{
+    width: 160px;
+}
+
+#confirmation div.form-element label, #info_account div.form-element label, label.submit_label{
+    width: 120px;
+}
+
+ 
+
+#big_button {
+    width: 200px;
+    background: #5BB2D1 no-repeat scroll 0%;
+    color: #FFF;
+    border:1px solid #407C92;
+}
+
+div.form-element input, div.form-element textarea, div.form-element select{
+    border: 1px solid #5BB2D1;
+    padding: 3px;
+    margin-bottom: 10px;
+    background-color: #FFF;
+    font-family:Verdana;
+    color:#555555;
+    font-weight:bold;
+    width: 300px;
+}
+
+#signup div.form-element input, 
+#info_account div.form-element input,
+#confirmation div.form-element input {
+    width: 200px;
+}
+
+div.form-element textarea{
+   height: 230px; 
+   font-size: 12px
+}
+
+div.form-element input.button { 	
+    	height: 28px; 
+	background: #E6F2FF;  
+	padding: 2px; 
+	color: #407C92; 
+	border:1px solid #5BB2D1;
+        margin-right:10px;
+	cursor:pointer;
+        display:block;
+        float:right;
+        width: 312px;
+}
+
+div.form-element input.button:hover {
+    border:1px solid #5BB2D1;
+    color:#FFF;
+    background: #AFD0F5;  
+}
+
+div.form-element .fieldWithErrors input, .fieldWithErrors textarea{
+ border:2px solid  #c00;
+}
+
+fieldset {
+  margin-top: 5px;
+  padding: 5px;
+  background: transparent;
+  border-style: double;
+  border-width: 1px;
+  border-color: #5BB2D1;
+  font-weight: normal;
+  width: 50%;
+}
+
+#notice {
+  background: #ffc;
+  border: 2px solid #0066CC;
+  color: #0066CC;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 6px;
+  text-align: left;
+  vertical-align: bottom;
+  width: 70%;
+}

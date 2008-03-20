@@ -1,0 +1,65 @@
+<% build_table_for_income_statement %>
+<div id="statement-chart-container">
+    <div id="navcontainer">
+     <ul id="navlist">
+        <li><a id="magnify">Table View</a></li>
+        <li><a href="#" onclick="new Effect.ScrollTo('detailed_graph_header',{offset:0}); return false">Detailed Chart</a></li>
+        <li><a id="annualized_button"
+        onclick="new Ajax.Updater(addTypeId('ajax-carousel-li'), addTypeId('/companies/annualized/<%=@company.id%>?type='), {asynchronous:true, evalScripts:true, method:'get', onComplete:function(request){overlays('after',['carousel-reg']);drawTableChart(addTypeId('statementTable'), 'statement-chart','statement-detailed-chart');annualized = true;}, onLoading:function(request){overlays('before',['carousel-reg']);}}); return false;" 
+        href="#">Annualized</a></li>
+        <li><a href="/companies/print_preview/<%=@company.id%>?type=1" onclick="updateStatementParm(this);" target="_blank">Printable Version</a></li>
+     </ul>
+    <script type="text/javascript" language="javascript">
+      //<![CDATA[ 
+      initModalWinForTable('magnify');
+      //]]>
+    </script>
+   </div>
+   <div id="statement-chart"></div>
+</div>
+<div id="statement_bar">
+  <ul> 
+    <% StatementType.find(:all, :order => 'id').each do |type| %>
+      <li><%= link_to_remote type.name, 
+            { :url => { :action => "statement", :id => @company.id, :type => type.id },
+              :method =>  'get', :update => "ajax-carousel-li#{type.id}",
+              :loading => "select_tab('#{type.method_like_name}');animHandler('before');",
+              :loaded =>  "activate_tab('#{type.method_like_name}','statement_table');",
+              :complete => "initializeStatement(#{type.id});animHandler('after');scroll(#{type.id});drawTableChart('statementTable#{type.id}', 'statement-chart','statement-detailed-chart');" },
+            { :href => url_for(:action => 'statement', :id => @company.id, :type => type.id) , 
+              :class => "#{type.id==1?'active':''}", :id => "#{type.method_like_name}"}%></li>
+    <% end %>
+  </ul>
+  <div id="statement_table">
+    <div class="carousel-component" id="ajax-carousel">
+        <div id="deleted_columns_parent" class="deleted_columns_parent">&nbsp;&nbsp;restore: [<span id="deleted_columns"></span>]</div>
+        <div id="navigation">
+          <img src="/images/left-enabled.gif" onclick="scrollToPrevCol();" id="left-enabled" border ="0" alt="previous years"/>
+          <div id="filter_box">
+            <img src="/images/update_indicator_arrow.gif" id="filter_indicator" class="no_display" border="0"/><input type="text" onfocus="clearSearchBox(this);" onblur="initSearchBox(this);" class="search_statement" id="search_statement" size="15" value="type filter terms..."/>
+            <script type="text/javascript" language="javascript">
+                //<![CDATA[ 
+                    var acl = new Form.Element.DelayedObserver('search_statement', 0.1, filter);
+                //]]>
+            </script>
+            <button  type="submit" class="submit_button" id="fiter_button" onclick="buttonFilter();">Filter</button>
+          </div>  
+          <img src="/images/right-enabled.gif" id="right-enabled" border ="0" onclick="scrollToNextCol();" alt="next years"/>
+        </div>
+      <div class="carousel-clip-region" id="carousel-reg">
+        <ul class="carousel-list" id="ajax-carousel-ul">
+          <li id="ajax-carousel-li1"><%= render :partial => "statements", :locals =>{:type_id => 1} %></li>
+          <li id="ajax-carousel-li2"><div style="width: 980px;">&nbsp</div></li>
+          <li id="ajax-carousel-li3"><div style="width: 980px;">&nbsp;</div></li>
+        </ul>
+      </div>
+     </div>
+  </div>
+  <div class="hdg" id="detailed_graph_header">
+    <h4>Detailed Graph</h4>
+  </div>
+   <a href="#" onclick="new Effect.ScrollTo('nav',{offset:0}); return false">Back to Top</a>
+   <div id="statement-chart-detailed-container">
+     <div id="statement-detailed-chart"></div>
+    </div>
+</div>

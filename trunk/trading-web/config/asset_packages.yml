@@ -1,0 +1,22 @@
+--- 
+javascripts: 
+- base: 
+  - prototype
+  - scriptaculous
+  - effects
+  - controls
+  - modal
+  - application
+- ajax_scaff:
+  - ajax_scaffold
+- calendar:
+  - calendar/dhtmlSuite-common 
+  - calendar/dhtmlSuite-calendar 
+  - calendar/dhtmlSuite-dragDropSimple
+stylesheets: 
+- base: 
+  - tab_combined
+  - scaffold
+  - style
+- ajax_scaff:
+  - ajax_scaffold

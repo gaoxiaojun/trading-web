@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>login</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">login</td></tr>
+</thead><tbody>
+<tr><td>open</td><td>/selenium/setup</td><td></td></tr>
+<tr><td>open</td><td>/</td><td>::: LOGIN :::</td></tr>
+<tr><td>verifyTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>(Not logged in!)</td><td></td></tr>
+<tr><td>click</td><td>account_login_link</td><td></td></tr>
+<tr><td>click</td><td>//input[@value='Sign In »']</td><td></td></tr>
+<tr><td>waitForNotVisible</td><td>ident_spinner</td><td>300</td></tr>
+<tr><td>verifyTextPresent</td><td>Oops, unknown username or password.</td><td></td></tr>
+<tr><td>type</td><td>post_login</td><td>not a user</td></tr>
+<tr><td>type</td><td>post_password</td><td>not a password</td></tr>
+<tr><td>click</td><td>//input[@value='Sign In »']</td><td></td></tr>
+<tr><td>waitForNotVisible</td><td>ident_spinner</td><td>300</td></tr>
+<tr><td>verifyTextPresent</td><td>Oops, unknown username or password.</td><td></td></tr>
+<tr><td>click</td><td>account_login_link</td><td></td></tr>
+<tr><td>type</td><td>post_login</td><td>igor</td></tr>
+<tr><td>type</td><td>post_password</td><td>hrabrina</td></tr>
+<tr><td>click</td><td>post_keepalive</td><td></td></tr>
+<tr><td>click</td><td>//input[@value='Sign In »']</td><td></td></tr>
+<tr><td>waitForElementPresent</td><td>link=Logout</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Hi, Igor!</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Account / Logout /</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Logout</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Thank You for visititing our website! You are logged out now. | Leave a feedback? » |</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Login (Not logged in!)</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=exact:Leave a feedback? »</td><td></td></tr>
+<tr><td>verifyTitle</td><td>|::. openTrade - Feedbacks .::|</td><td></td></tr>
+
+<tr><td>click</td><td>account_login_link</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=exact:Forgot your password?</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Forgotten Password</td><td></td></tr>
+<tr><td>click</td><td>account_login_link</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=exact:Create an account?</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Signup</td><td></td></tr>
+<tr><td>clickAndWait</td><td>//a/i</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+
+<tr><td>open</td><td>/members/info</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Auth .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>You lack credentials to access this page</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Unfortunately, we need to go through this step.</td><td></td></tr>
+<tr><td>type</td><td>members_login</td><td>not known</td></tr>
+<tr><td>type</td><td>members_password</td><td>not known</td></tr>
+<tr><td>clickAndWait</td><td>commit</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Auth .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Oops, unknown username or password.</td><td></td></tr>
+<tr><td>type</td><td>members_login</td><td>igor</td></tr>
+<tr><td>type</td><td>members_password</td><td>hrabrina</td></tr>
+<tr><td>clickAndWait</td><td>commit</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Auth .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Login successful.</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Account Info</td><td></td></tr>
+<tr><td>type</td><td>post_firstname</td><td></td></tr>
+<tr><td>clickAndWait</td><td>big_button</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Auth .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Your preferences have been saved.</td><td></td></tr>
+<tr><td>type</td><td>post_firstname</td><td>Igor</td></tr>
+<tr><td>clickAndWait</td><td>big_button</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Auth .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Your preferences have been saved.</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Account Info</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Home</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Account</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Auth .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Account Info</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Logout</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Thank You for visititing our website! You are logged out now.</td><td></td></tr>
+
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<h1>Editing portfolio</h1>
+
+<%= error_messages_for :portfolio %>
+
+<% form_for(:portfolio, :url => portfolio_path(@portfolio), :html => { :method => :put }) do |f| %>
+  <p>
+    <b>Amount</b><br />
+    <%= f.text_field :amount %>
+  </p>
+
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', portfolio_path(@portfolio) %> |
+<%= link_to 'Back', portfolios_path %>

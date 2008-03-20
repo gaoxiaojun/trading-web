@@ -1,0 +1,70 @@
+Use this README file to introduce your application and point to useful places in the API for learning more.
+Run "rake appdoc" to generate API documentation for your models and controllers.
+
+GEMS REQUIRED:
+
+1. ferret-0.10.9 (doesn't work with later versions. used to search companies for autocomplete): gem install ferret -v0.10.9
+2. money-1.7.1  -  gem install --source http://dist.leetsoft.com money
+  Problems:
+  when rails is fixed from "require_gem" to "gem" the money gem throws exception:
+  c:/ruby/lib/ruby/gems/1.8/gems/money-1.7.1/lib/support/cattr_accessor.rb:7:in `cattr_reader': undefined method `id
+2name' for {:instance_writer=>false}:Hash (NoMethodError)
+  Fix: id2name method should be substitude with:  id2_name = sym.respond_to?('id2name') ? sym.id2name : sym.to_s
+
+3. builder-2.0   (used in search_helper for autocomplete): gem install builder
+
+GEMS BACKGROUND:
+1. mechanize-0.6.10 - gem install mechanize  
+    dependent on (it would be installed as part of dependencies):
+    -hpricot-0.6
+    -hoe-1.3.0
+    -rubyforge-0.4.4
+    -rake-0.7.3
+2. rubyful_soup-1.0.4 - gem install rubyful_soup
+    dependent on (it would be installed as part of dependencies):
+    -htmltools-1.10
+
+GEMS SCHEDULLING
+1. daemons-1.0.7  - gem install daemons
+
+backgroundrb:
+    * Slave 1.1.0 (or higher) - gem install slave
+    * Daemons 1.0.2 (or higher)
+
+
+GEMS TESTING AND UTILS:
+1. rspec-1.0.8
+    depends on: (would not be installed as part of the rspec):
+    -win32console 1.0.8
+  
+2. rake-0.7.3 installed as part of mechanize.
+
+GEMS CACHE (could be installed already)
+1. install memcache:
+>cap install_memcached
+or
+> sudo apt-get install memcached (on the server)
+2. sudo gem uninstall Ruby-MemCache
+3. mem_cache
+  gem install ruby-memcache (depends on io but it is installed as dependency).
+4. # gem install memcache-client
+
+
+_______________________________________________________________________________________
+NOTE for mechanize: 
+Patch if not working for prety_print:
+       end
+-      if RUBY_VERSION > '1.8.2'
++      if RUBY_VERSION > '1.8.4'
+         alias :inspect  :pretty_inspect
+       end
+     end
+@@ -52,7 +52,7 @@
+           q.breakable; q.pp href
+         }
+       end
+-      if RUBY_VERSION > '1.8.2'
++      if RUBY_VERSION > '1.8.4'
+         alias :inspect  :pretty_inspect
+       end
+     end

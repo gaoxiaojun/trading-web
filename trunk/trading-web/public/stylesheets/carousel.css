@@ -1,0 +1,80 @@
+.carousel-component { 
+	position:relative;
+	overflow:hidden;
+	visibility:visible;
+}
+				
+.carousel-component ul.carousel-list { 
+	width: 10000000px;
+	position:relative;
+	z-index:1; 
+}
+
+.carousel-component .carousel-list li { 
+	float:left;
+	list-style:none;
+	overflow:hidden;
+}
+
+.carousel-component .carousel-vertical li { 
+	float:none;
+	margin-bottom:0px;
+}
+
+.carousel-component ul.carousel-vertical { 
+	width:auto;
+}
+
+.carousel-component .carousel-clip-region { 
+	overflow:hidden;
+	margin:0px auto;
+	position:relative; 
+}
+
+/**
+ * Safe to override. It is safe to override background, padding, margin, color,
+ * text alignment, fonts, etc. Define a separate CSS file and override your style
+ * preferences.
+ **/
+
+.carousel-component { 
+	background:#FFF;
+	padding:0 0 0 0;
+	border: 0px;
+	border-right: 0px;
+}
+
+#ajax-carousel ul.carousel-list { 
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	border-bottom: 0px;
+}
+#ajax-carousel .carousel-list li { 
+	margin: 0px;
+	padding:0px;
+	border: 0px none;
+}
+
+/* Overlay */
+#overlay, .overlay {
+  width: 100%;
+  height: 100%;
+  background-color:  #FFF;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding-top: 30px;
+  z-index: 100;
+  color: #000;
+  border:1px dotted #000;	
+	text-align: center;
+	font-size: 24px;
+  filter:alpha(opacity=80);
+	-moz-opacity: 0.8;
+	opacity: 0.8;
+}
+
+#overlay, .overlay img{
+    position: relative;
+    left: 43%;
+}

@@ -1,0 +1,11 @@
+[REVISION 20061013]
+
+[NEW] install.rb informs user of missing dependencies.
+
+[REVISION 20060717]
+
+[CHANGED] Placed code into module named after the class to which the mixin will be applied.
+
+[REVISION 20060704]
+
+[NEW] Initial revision.

@@ -1,0 +1,14 @@
+Hello <%= @user.name %>,
+
+You have requested a change for your email address.
+
+In order to confirm, please visit the following URL:
+<%= @app[:url] %>members/confirm?from=<%= @user.email.gsub(/\@/,'%40') %>&key=<%= @user.validkey %>
+
+In case the link above doesn't work, you can copy and paste the validation key:
+<%= @user.validkey %>
+
+Thank you,
+
+<%= @app[:title] %> Administrator
+<%= @app[:url] %>

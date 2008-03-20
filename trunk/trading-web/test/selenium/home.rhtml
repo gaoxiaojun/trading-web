@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>home</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">home</td></tr>
+</thead><tbody>
+  
+<tr><td>open</td><td>/selenium/setup</td><td></td></tr>
+<tr><td>open</td><td>/</td><td>::: HOME :::</td></tr>
+<tr><td>verifyTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+<tr><td>click</td><td>tab_Price</td><td></td></tr>
+<tr><td>waitForCondition</td><td>selenium.page().findElement('tab_Price').className == 'active'</td><td>3000</td></tr>
+<tr><td>verifyTextPresent</td><td>Gainers</td><td></td></tr>
+<tr><td>click</td><td>tab_Vol</td><td></td></tr>
+<tr><td>waitForCondition</td><td>selenium.page().findElement('tab_Vol').className == 'active'</td><td>3000</td></tr>
+<tr><td>verifyTextPresent</td><td>Most Active</td><td></td></tr>
+<tr><td>click</td><td>tab_Cap</td><td></td></tr>
+<tr><td>waitForCondition</td><td>selenium.page().findElement('tab_Cap').className == 'active'</td><td>3000</td></tr>
+<tr><td>verifyTextPresent</td><td>Leaders</td><td></td></tr>
+<tr><td>click</td><td>tab_Chg</td><td></td></tr>
+<tr><td>waitForCondition</td><td>selenium.page().findElement('tab_Chg').className == 'active'</td><td>3000</td></tr>
+<tr><td>verifyTextPresent</td><td>Leaders</td><td></td></tr>
+<tr><td>verifyTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=About</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>What is OpenTrade?</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Feedback</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Feedbacks .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Add Feedback</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Contact Us</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>We are eager to talk to you...</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Disclaimer</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Our vision also incorporates...</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Privacy</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>We value your privacy and put a lot efforts to protect it!</td><td></td></tr>
+<tr><td>clickAndWait</td><td>company_footer</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>What we value the most....</td><td></td></tr>
+
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+  <title>|::. openTrade - <%= params[:controller].capitalize %> .::|</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  
+  <%= stylesheet_link_tag 'print_preview', :media => 'all' %>
+  
+  <%= javascript_include_tag 'protoculous' %>
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <div id="logo">
+                <a href="/"><span id="i"><i>Open</i></span>&nbsp;&nbsp;&nbsp;<i>Trade</i></a>
+                <div id="question_img"><img src="/images/question.gif"  alt="sofixTrade"/></div>
+            </div>
+            <div id="header">
+              <div id="nav">
+                 <ul>
+                    <li class="<%= params[:controller]=='feedbacks'?'active':'' %>"><a href="/feedbacks/new" class="<%= params[:controller]=='feedbacks'?'active':'' %>">Feedback</a></li> 
+                    <li class="<%= params[:id]=='about'?'active':'' %>"><a href="/home/pages/about" class="<%= params[:id]=='about'?'active':'' %>">About</a></li> 
+                    <li class="<%= params[:controller]=='companies'?'active':'' %>"><a href="/companies" class="<%= params[:controller]=='companies'?'active':'' %>">Companies</a></li>
+                    <li class="<%= params[:controller]=='home' && params[:action]=='index' ?'active':'' %>"><a href="/" class="<%= params[:controller]=='home' && params[:action]=='index' ?'active':'' %>">Home</a></li> 
+               </ul> 
+                </div>
+                <div class="sf_search" id="search_box">
+                      <form action="/search" method="get" id="srch_form">
+                      <div id="ex">e.g. search: 'Himco' or 'Bul Bank' </div>
+                        <input type="text" size="20" name="search[term]" id="search_term" class="search" autocomplete="off"/>
+                        <div id="auto_complete_div" class="auto_complete" style="display: none;"></div>
+                        <script type="text/javascript">
+                          //<![CDATA[
+                           var auc = new Ajax.Autocompleter('search_term', 'auto_complete_div', '/search/auto_complete_for_search_term', {method: 'get'})
+                          //]]>
+                         </script>
+                         <input type="submit" value="Search" class="submit"><i>&nbsp; Explore the possibilities!</i>
+                      </form>
+                </div>
+            </div>
+        </div>
+        <div class="layout_separater"></div>
+        <div class="left" id="main_panel">
+            <div class="right_side" id="main-context">
+                <%= yield  %>     
+            </div>
+        </div>
+        <div class="footer">
+            <hr>
+             <p><a href="/home/pages/about">About</a> | <a href="/feedbacks/new">Feedback</a> | <a href="/home/pages/contactUs">Contact Us</a> | <a href="/home/pages/disclaimer">Disclaimer</a> | <a href="/home/pages/privacy">Privacy</a> |<br />
+            <a href="/home/pages/company" title="What's your solution?" id="company_footer"> Open Trade Investments, Inc</a></p>
+        </div>
+
+    </div>
+</body>
+</html>

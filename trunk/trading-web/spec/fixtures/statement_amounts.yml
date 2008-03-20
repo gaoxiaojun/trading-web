@@ -1,0 +1,250 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+himco_statement_balance_sheet_jan_amount1:
+  id: 1
+  amount: 1320030 
+  currency: USD    
+  account_type_id: 4             
+  statement_id: 1
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+
+himco_statement_balance_sheet_jan_amount2:
+  id: 2
+  amount: 2345678 
+  currency: USD    
+  account_type_id: 5             
+  statement_id: 1
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+  
+himco_statement_income_jan_amount1:
+  id: 3
+  amount: 23241 
+  currency: USD    
+  account_type_id: 4             
+  statement_id: 2
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+
+himco_statement_income_jan_amount2:
+  id: 4
+  amount: 32109 
+  currency: USD    
+  account_type_id: 5             
+  statement_id: 2
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+  
+himco_statement_cash_flow_jan_amounts1:
+  id: 5
+  amount: 123456 
+  currency: USD    
+  account_type_id: 4             
+  statement_id: 3
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+  
+himco_statement_cash_flow_jan_amounts2:
+  id: 6
+  amount: 123456 
+  currency: USD    
+  account_type_id: 5             
+  statement_id: 3
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+
+himco_statement_balance_sheet_apr_amount1:
+  id: 7
+  amount: 34598 
+  currency: USD    
+  account_type_id: 4             
+  statement_id: 4
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+
+himco_statement_balance_sheet_apr_amount1:
+  id: 8
+  amount: 78906534 
+  currency: USD    
+  account_type_id: 4             
+  statement_id: 4
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+  
+himco_statement_balance_sheet_apr_amount2:
+  id: 9
+  amount: 34343343 
+  currency: USD    
+  account_type_id: 5             
+  statement_id: 4
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+   
+himco_statement_income_apr_amount1:
+  id: 10
+  amount: 324434 
+  currency: USD    
+  account_type_id: 4             
+  statement_id: 5
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+
+himco_statement_income_apr_amount2:
+  id: 11
+  amount: 2656575 
+  currency: USD    
+  account_type_id: 5             
+  statement_id: 5
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+  
+himco_statement_cash_flow_apr_amount1:
+  id: 12
+  amount: 324234 
+  currency: USD    
+  account_type_id: 4             
+  statement_id: 6
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+  
+himco_statement_cash_flow_apr_amount2:
+  id: 13
+  amount: 93434343
+  currency: USD    
+  account_type_id: 5             
+  statement_id: 6
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+ 
+bulbank_statement_balance_sheet_jan_amount1:
+  id: 14
+  amount: 12341
+  currency: USD    
+  account_type_id: 4             
+  statement_id: 7
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+
+bulbank_statement_balance_sheet_jan_amount2:
+  id: 15
+  amount: 765432
+  currency: USD    
+  account_type_id: 5             
+  statement_id: 7
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+   
+bulbank_statement_income_jan_amount1:
+  id: 16
+  amount: 4567890
+  currency: USD    
+  account_type_id: 4             
+  statement_id: 8
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+
+bulbank_statement_income_jan_amount2:
+  id: 17
+  amount: 9030030
+  currency: USD    
+  account_type_id: 5             
+  statement_id: 8
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+  
+bulbank_statement_cash_flow_jan_amount1:
+  id: 18
+  amount: 341278000
+  currency: USD    
+  account_type_id: 4             
+  statement_id: 9
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+  
+bulbank_statement_cash_flow_jan_amount2:
+  id: 19
+  amount: 30000033
+  currency: USD    
+  account_type_id: 5             
+  statement_id: 9
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+  
+bulbank_statement_balance_sheet_apr_amount1:
+  id: 20
+  amount: 30000033
+  currency: USD    
+  account_type_id: 4             
+  statement_id: 10
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+  
+bulbank_statement_balance_sheet_apr_amount2:
+  id: 21
+  amount: 20000002
+  currency: USD    
+  account_type_id: 5          
+  statement_id: 10
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+  
+bulbank_statement_income_apr_amount1:
+  id: 22
+  amount: 100000101
+  currency: USD    
+  account_type_id: 4        
+  statement_id: 11
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+
+bulbank_statement_income_apr_amount2:
+  id: 23
+  amount: 444000444
+  currency: USD    
+  account_type_id: 5       
+  statement_id: 11
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+  
+bulbank_statement_cash_flow_apr_amount1:
+  id: 24
+  amount: 55500055
+  currency: USD    
+  account_type_id: 4      
+  statement_id: 12
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0
+
+bulbank_statement_cash_flow_apr_amount2:
+  id: 25
+  amount: 677777009
+  currency: USD    
+  account_type_id: 5      
+  statement_id: 12
+  created_at: 2007-02-20
+  updated_at: 2007-02-20
+  lock_version: 0

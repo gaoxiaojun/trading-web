@@ -1,0 +1,41 @@
+<div id="confirmation" class="article">
+    <h2>Confirmation</h2>
+    <h3>Sorry, but we have to do this.</h3>
+    <strong>
+        <% if flash['notice'] %>
+          <div id="notice"><%= flash['notice'] %></div>
+        <% elsif flash['errors']%>
+          <div id="errorExplanation" class="errorExplanation"><%= flash['errors'] %></div>
+        <% else %>
+          <div id="notice">This page allows you to confirm an account. <br/>Please enter your email and the validation key you have received.</div>
+        <% end %>
+    </strong>
+    <fieldset class='form' title="Confirmation Form" >
+        <legend><strong>Confirmation Form</strong></legend>
+        <% form_for :user, :url => { :action => :confirm } do |f| %>
+          <div class="form-element" >
+              <p>
+                  <label for="user_email" class="required">*Email address:</label>
+                  <%= f.text_field :email, :maxlength => 64, :value => @email%>
+              </p>
+          </div>
+          <div class="form-element" >
+              <p>
+                  <label for="user_validkey" class="required">*Validation Key:</label>
+                  <%= f.text_field :validkey, :maxlength => 40, :value => params[:validkey]%>
+                </p>
+            </div>
+            <div>
+                <p>
+                    <label for="users" class="submit_label" >&nbsp;</label>
+                    <%= spinner_tag %><%= submit_tag "Confirm &#187;", :class => 'submit', :id=>"big_button", :style=>"width: 210px;" %>
+                </p>
+            </div>        
+          <% end %>
+      </fieldset>
+      <br/>
+      | <%= link_to 'Resend confirmation mail &#187;', auth_url(:action => 'resendsignup') %> | 
+      <% if flash['errors'] %>
+        <script type="text/javascript">Effect.Shake('confirmation')</script>
+      <% end %>
+  </div>

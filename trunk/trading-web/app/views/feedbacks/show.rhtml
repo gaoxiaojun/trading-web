@@ -1,0 +1,31 @@
+<div class="article">
+<h2>Review Feedback</h2>
+<h3>Thank you for your interest and commitment to our site and community!!!</h3>
+<fieldset title="ReviewFeedback" >
+  <legend><strong>Review Feedback</strong></legend>
+<p>
+    <b>Email:</b>
+  <%=h @feedback.obstructed_email %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @feedback.category  %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%=h @feedback.subject %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @feedback.description %>
+</p>
+</fieldset>
+<br/>
+
+    <%= link_to 'Edit', edit_feedback_path(@feedback) << "?key=#{flash[:feed_key]}" %> | 
+    <%= link_to 'Delete', feedback_path(@feedback)<< "?key=#{flash[:feed_key]}", :confirm => 'Are you sure?', :method => :delete %> | 
+<%= link_to 'View all feedbacks?', feedbacks_path %> | 
+</div>

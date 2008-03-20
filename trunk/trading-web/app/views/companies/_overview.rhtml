@@ -1,0 +1,75 @@
+<div id="stock_price">
+    <% latest_market = @company.latest_updated_market %>
+    <span id="price"><%= latest_market.last_traded_price %></span><span id="currency">(BGN)</span><span id="price_change"><%= number_change_html latest_market.price_change %>&nbsp;<%= show_percent number_change_html(latest_market.price_change_percent), true %></span></br>
+    <span id="stock_date">Last trade: <%= not_nil formatted_time(latest_market.last_traded_date()) %></span>
+</div>
+
+<div class="leftColumn" id="markets">
+    <div class="theme" >
+        <h2>Markets&nbsp;&nbsp;on&nbsp;&nbsp;Bulgarian&nbsp;&nbsp;Stock&nbsp;&nbsp;Exchange (BSE)</h2>
+        <table  class="four_columns" cellspacing="0">
+          <tbody>
+            <% @company.trading_markets.each do |market| %>
+              <tr class="divider">
+                <td class="left_cell">Market:</td>
+                <td class="right_cell"><%= not_nil market.market_name %></td>
+                <td class="column_divider">&nbsp;</td>
+                <td class="left_cell">BSE Code:</td>
+                <td class="right_cell"><%= not_nil market.stock_symbol %></td>
+             </tr>   
+            <tr>
+                <td class="left_cell">Last Trade:</td>
+                <td class="right_cell"><%= not_nil market.last_traded_price %></td>
+                <td class="column_divider">&nbsp;</td>
+                <td class="left_cell">Trade Date:</td>
+                <td class="right_cell"><%= not_nil formatted_time(market.last_traded_date()) %></td>
+            </tr>
+            <tr>
+                <td class="left_cell">Change:</td>
+                <td class="right_cell"><%= not_nil number_change_html(market.price_change) %></td>
+                <td class="column_divider">&nbsp;</td>
+                <td class="left_cell">% Change:</td>
+                <td class="right_cell"><%= not_nil show_percent(number_change_html(market.price_change_percent)) %></td>
+            </tr>
+            <tr>
+                <td class="left_cell">Prev Close:</td>
+                <td class="right_cell"><%= not_nil market.prev_close %></td>
+                <td class="column_divider">&nbsp;</td>
+                <td class="left_cell">52-Wk Avrg:</td>
+                <td class="right_cell"><%= not_nil market.price_avrg %></td>
+            </tr>
+             <tr>
+                <td class="left_cell">52-Wk High:</td>
+                <td class="right_cell"><%= not_nil market.price_high %></td>
+                <td class="column_divider">&nbsp;</td>
+                <td class="left_cell">52-Wk Low:</td>
+                <td class="right_cell"><%= not_nil market.price_low %></td>
+            </tr>
+             <tr>
+                <td class="left_cell">Market&nbsp;Cap(th):</td>
+                <td class="right_cell"><%= not_nil number_in_thousands(market.market_cap) %></td>
+                <td class="column_divider">&nbsp;</td>
+                <td class="left_cell">Stocks Issued:</td>
+                <td class="right_cell"><%= not_nil market.stock_volume %></td>
+            </tr>
+             <tr>
+                <td class="left_cell">Stock Nominal:</td>
+                <td class="right_cell"><%= not_nil market.nominal %></td>
+                <td class="column_divider">&nbsp;</td>
+                <td class="left_cell">Currency:</td>
+                <td class="right_cell"><%= not_nil market.nominal_currency %></td>
+            </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<div id="theme_footer" class="theme_orng">
+    <h2>Comming Soon</h2>
+    <div class="todo"><b>What the Community Thinks:</b><br/>
+        Ratings, votes, trends, discussions, portfolio ...
+    </div>
+</div>

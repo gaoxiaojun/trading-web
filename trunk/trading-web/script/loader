@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+ENV["RAILS_ENV"] ||= "production"
+
+require File.join(File.dirname(__FILE__),"/../","config", "environment")
+require File.dirname(__FILE__) + '/../lib/scrapping/scrap_bse'
+require File.dirname(__FILE__) + '/../lib/data_conversion/convert_company_satements'
+require File.dirname(__FILE__) + '/../lib/data_conversion/populate_account_types'
+require File.dirname(__FILE__) + '/../lib/data_conversion/populate_market_stock_volume'
+
+puts ARGV.inspect
+arg = ARGV[0]
+
+case arg
+  when nil;  puts 'The command needs additional parameter!'
+  when '-c'; ScrapperMechanize.send "execute_companies_collect_#{ARGV[1].to_s}"
+  when '-t'; ScrapperMechanize.send "execute_last_traded_price_#{ARGV[1].to_s}"
+  when '-v'; PopulateMarketStockVolume.populate
+  when '-a'; PopulatedAccountTypes.populate
+  when '-f'; ConvertCompanyStatements.load_financial_statements
+  when '-all'
+     ScrapperMechanize.send "execute_companies_collect_#{ARGV[1].to_s}"
+     ScrapperMechanize.send "execute_last_traded_price_#{ARGV[1].to_s}"
+     PopulateMarketStockVolume.populate
+     PopulatedAccountTypes.populate
+     ConvertCompanyStatements.load_financial_statements
+end

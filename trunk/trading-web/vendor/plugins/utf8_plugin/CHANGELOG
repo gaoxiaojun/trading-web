@@ -1,0 +1,1 @@
+* Removed the content-type setting because it's just popped up in Rails Edge

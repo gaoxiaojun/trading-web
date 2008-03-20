@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    
+    <head>
+        <title>|::. openTrade - <%= params[:controller].capitalize %> .::|</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        
+        <%= stylesheet_link_merged :base %>
+        <%= @stylesheets.collect { |file| stylesheet_link_merged file, :media => 'all' }.join("\n") if @stylesheets %>
+        
+        <%= javascript_include_merged :base %>
+        <%= @javascripts.collect {|file| javascript_include_merged file }.join("\n") if @javascripts %>
+    </head>
+    <body>
+        <div class="content">
+            <div class="header_top"></div>
+            <div class="header">
+                <div class="sf_right">
+                    <div id="nav">
+                        <ul id="main_tabnav">
+                            <li class="<%= params[:controller]=='feedbacks'?'active':'' %>"><a href="/feedbacks/new" class="<%= params[:controller]=='feedbacks'?'active':'' %>">Feedback</a></li> 
+                            <li class="<%= params[:id]=='about'?'active':'' %>"><a href="/home/pages/about" class="<%= params[:id]=='about'?'active':'' %>">About</a></li> 
+                            <li class="<%= params[:controller]=='companies'?'active':'' %>"><a href="/companies" class="<%= params[:controller]=='companies'?'active':'' %>">Companies</a></li>
+                            <li class="<%= params[:controller]=='home' && params[:action]=='index' ?'active':'' %>"><a href="/" class="<%= params[:controller]=='home' && params[:action]=='index' ?'active':'' %>">Home</a></li> 
+                        </ul> 
+                    </div>
+                    <div class="sf_search" id="search_box">
+                        <div id="logo">
+                            <a href="/"><span id="i"><i>Open</i></span>&nbsp;&nbsp;&nbsp;&nbsp;<i>Trade</i></a>
+                        </div>
+                        <img src="/images/question.gif" alt="iTrade"/>
+                        <center>
+                            <form action="/search" method="get" id="srch_form">
+                                <input type="text" size="20" name="search[term]" id="search_term" class="search" autocomplete="off"/>
+                                <div id="auto_complete_div" class="auto_complete" style="display: none;"></div>
+                                <script type="text/javascript">
+                          //<![CDATA[
+                           var auc = new Ajax.Autocompleter('search_term', 'auto_complete_div', '/search/auto_complete_for_search_term', {method: 'get'})
+                          //]]>
+                                </script>
+                                <input type="submit" value="Search" class="submit">&nbsp; Explore the possibilities!
+                                <p><div id="ex">e.g. search: 'Himco' or 'Bul Bank'</div></p>
+                                <p>&nbsp;</p>
+                            </form>
+                        </center>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="header_bottom"></div>
+            <div class="header_top"></div>
+            
+            <div class="left" id="main_panel">
+                <div class="right_side" id="main-context">
+                    <% if flash[:notice] %>
+                      <div id="notice"><p><%= flash[:notice] %></p></div>
+                    <% end  %> 
+                    <%= yield  %>  
+                </div>
+            </div>
+            <div class="right"  id="left_panel">
+                
+                <div class="box_top">
+                    <h2>Links</h2>
+                </div>
+                <div class="box">
+                    <%= popup_account_infos %>
+                    <a href="/companies/traded_on/<%= format_time_param(Time.now) %>">Last Traded</a><br/>
+                    <a href="/companies">Companies</a><br/>
+                    <br/><br/>
+                </div>
+                <div class="box_bottom"></div>
+                <br/>
+                <div class="box_top">
+                    <h2>Top Movers</h2>
+                </div>
+                <div id="top_movers_box" class="box">
+                    <% cache "application/top_movers", :expire => 2.hours do %>
+                      <%= render :partial => "/markets/top_movers" %>
+                    <% end %>
+                </div>
+                <div class="box_bottom"></div>
+            </div>
+            <div class="footer">
+                <hr>
+                <p><a href="/home/pages/about">About</a> | <a href="/feedbacks/new">Feedback</a> | <a href="/home/pages/contactUs">Contact Us</a> | <a href="/home/pages/disclaimer">Disclaimer</a> | <a href="/home/pages/privacy">Privacy</a> |<br />
+                <a href="/home/pages/company" title="What's your solution?" id="company_footer"> Open Trade Investments, Inc</a></p>
+            </div>
+            <div class="header_bottom"></div>
+        </div>
+    </body>
+</html>

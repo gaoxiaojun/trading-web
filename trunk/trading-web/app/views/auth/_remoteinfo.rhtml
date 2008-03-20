@@ -1,0 +1,7 @@
+<% if user_logged_in? -%>
+  Hi, <%= @user.name %>!<br/>
+  <%=  link_to 'Account', auth_url(:action => 'info') %> /
+  <%=  link_to 'Logout',  auth_url(:action => 'logout') %> /
+<% else -%>
+  <a href="#" id="account_login_link">Login</a>&nbsp;(<i>Not logged in!</i>)
+<% end -%>

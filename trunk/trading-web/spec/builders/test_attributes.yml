@@ -1,0 +1,29 @@
+User:
+  :login: login@@unique_index@@
+  :email: igor@@unique_index@@@email.com
+  :__send__: 
+     :confirmed: 1
+     :ipaddr: remote_ip
+     :password: psword
+Portfolio:
+  :amount: 500000
+PortfolioWithholding:
+  :trading_market_id: 1
+  :transaction_type_id: 1
+  :shares:  34
+  :date: 2010-10-26
+  :price: 2300
+TradingMarket:
+  :market_name: Market A@@unique_index@@
+  :stock_symbol: IN@@short_unique_index@@
+  :last_traded_price: 344
+  :last_traded_date: 2007-05-09
+  :company_id: 1
+Company:
+  :name: Some Name@@unique_index@@
+  :bul_stat: 23@@unique_index@@
+  :type_id: 1
+StockQuote:
+  :timepoint: 2007-05-09
+  :volume: 23
+  :price: 4567

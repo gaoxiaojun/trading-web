@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>company</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">company</td></tr>
+</thead><tbody>
+  
+<tr><td>open</td><td>/selenium/setup</td><td></td></tr>
+<tr><td>open</td><td>/</td><td></td>::: COMPANY :::</tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Home .::|</td><td></td></tr>
+<tr><td>clickAndWait</td><td>//a[2]</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Companies .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Stock Symbol</td><td></td></tr>
+<tr><td>clickAndWait</td><td>link=Last Traded</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Companies .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Stock Symbol</td><td></td></tr>
+<tr><td>type</td><td>search_term</td><td>HIMCO</td></tr>
+<tr><td>clickAndWait</td><td>//input[@value='Search']</td><td></td></tr>
+<tr><td>assertTitle</td><td>|::. openTrade - Companies .::|</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Markets&nbsp;&nbsp;on&nbsp;&nbsp;Bulgarian&nbsp;&nbsp;Stock&nbsp;&nbsp;Exchange (BSE)</td><td></td></tr>
+<tr><td>selectWindow</td><td>null</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Himco Chemical, Inc</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>BSE Code:</td><td></td></tr>
+<tr><td>click</td><td>finance_tab</td><td></td></tr>
+<tr><td>waitForCondition</td><td>selenium.page().findElement('finance_tab').className == 'active'</td><td>3000</td></tr>
+<tr><td>verifyTextPresent</td><td>Извънредни приходи</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>B. Assets from other financial institutions</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>002.a. 1. Unlimited bank deposits</td><td></td></tr>
+<tr><td>click</td><td>finance_tab2</td><td></td></tr>
+<tr><td>waitForCondition</td><td>selenium.page().findElement('finance_tab2').className == 'active'</td><td>3000</td></tr>
+<tr><td>verifyTextPresent</td><td>Detailed&nbsp;&nbsp;Financials</td><td></td></tr>
+<tr><td>selectWindow</td><td>null</td><td></td></tr>
+<tr><td>click</td><td>background_tab</td><td></td></tr>
+<tr><td>waitForCondition</td><td>selenium.page().findElement('background_tab').className == 'active'</td><td>3000</td></tr>
+<tr><td>verifyTextPresent</td><td>Capital:</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>23443.43</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Market A, Market B</td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Some industrial branch</td><td></td></tr>
+
+</tbody></table>
+</body>
+</html>

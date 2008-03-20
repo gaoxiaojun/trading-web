@@ -1,0 +1,74 @@
+<br/>
+<div id="mainContent">
+    <div class="leftColumn">
+        <div class="theme">
+            <h2>Summary</h2>
+            <table class="two_columns" cellspacing="4">
+                <tr>
+                    <td class="left_cell">Stock Symbols:</td>
+                    <td class="right_cell"><%= not_nil @company.stock_symbols.join(", ").to_s %></td>
+                </tr>
+                <tr>
+                    <td class="left_cell">Markets:</td>
+                    <td class="right_cell"><%= not_nil @company.trading_markets.collect{|m| m.market_name}.join(", ").to_s %></td>
+                </tr>
+                <tr>
+                    <td class="left_cell">BULSTAT No:</td>
+                    <td class="right_cell"><%= not_nil @company.bul_stat %></td>
+                </tr>
+                <% if @company.company_background %>
+                <tr>
+                    <td class="left_cell">Tax No:</td>
+                    <td class="right_cell"><%= not_nil @company.company_background.tax_no %></td>
+                </tr>
+                <tr>
+                    <td class="left_cell">City:</td>
+                    <td class="right_cell"><%= not_nil @company.company_background.city %></td>
+                </tr>
+                <tr>
+                    <td class="left_cell">Branch:</td>
+                    <td class="right_cell"><%= not_nil @company.company_background.branch %></td>
+                </tr>
+                <tr>
+                    <td class="left_cell">Activity:</td>
+                    <td class="right_cell"><%= not_nil @company.company_background.activity %></td>
+                </tr>
+                 <% end %>
+            </table>
+        </div>
+    </div>
+    <div class="rightColumn">
+        <div class="theme_red">
+            <h2>Key Stats</h2>
+            <% if @company.company_financial %>
+            <table class="two_columns" cellspacing="4">
+                <tr>
+                    <td class="left_cell">Capital:</td>
+                    <td class="right_cell"><%= not_nil @company.company_financial.capital %></td>
+                </tr>
+                <tr>
+                    <td class="left_cell">Currency:</td>
+                    <td class="right_cell"><%= Money::BGN_CURRENCY %></td>
+                </tr>
+                <tr>
+                    <td class="left_cell">Nominal:</td>
+                    <td class="right_cell"><%= not_nil @company.company_financial.nominal %></td>
+                </tr>
+                <tr>
+                    <td class="left_cell">Profit:</td>
+                    <td class="right_cell"><%= not_nil @company.company_financial.profit %>&nbsp;&nbsp;(<%= @company.company_financial.profit_year.year if @company.company_financial.profit_year%>)</td>
+                </tr>
+                <tr>
+                    <td class="left_cell">Net Sales:</td>
+                    <td class="right_cell"><%= not_nil @company.company_financial.net_sales %>&nbsp;&nbsp;(<%= @company.company_financial.net_sales_year.year if @company.company_financial.net_sales_year %>)</td>
+                </tr>
+                <tr>
+                    <td class="left_cell">Fixed Assets:</td>
+                    <td class="right_cell"><%= not_nil @company.company_financial.fixed_assets %>&nbsp;&nbsp;(<%= @company.company_financial.fixed_assets_year.year if @company.company_financial.fixed_assets_year%>)</td>
+                </tr>
+            </table>
+            <% end %>
+        </div>
+    </div>
+  </div>
+  <br/>

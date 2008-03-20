@@ -1,0 +1,41 @@
+  <div id='account_login_remote'>
+   
+  <% form_remote_tag( 
+      :update=> 'modal_container', 
+      :url => auth_url(:action => 'remotelogin'),
+      :loading => "Element.show('ident_spinner');"
+      ) do %>
+    
+    <table cellpadding="3" cellspacing="3" border="0" class="signup">
+        <tr>
+            <td>
+                <label for="post_login">Username</label>
+            </td><td>
+                <%= text_field "post", "login", :size => 20, :class=>"username" %>
+            </td>
+            <td>
+                <label for="post_password">Password</label>
+            </td><td>
+                <%= password_field "post", "password", :size => 20, :class=>"password" %><br />
+            </td>
+            <td>
+              <%= check_box("post", "keepalive") %>Keep me signed in
+            </td>
+            
+            <td>
+                <%= spinner_tag %><input type="submit" value="Sign In &#187;" class="submit"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" align="center">
+              | <%= link_to 'Forgot your password?', auth_url(:action => 'lostpassword') %>  |  
+                <% if @app[:allow_self_registration] %>
+                  <%= link_to 'Create an account?', auth_url(:action => 'signup') %>  | 
+                <% end %>
+            </td>
+        </tr>
+        
+    </table>
+    <% end %>
+    
+</div>
